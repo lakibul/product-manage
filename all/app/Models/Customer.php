@@ -16,6 +16,6 @@ class Customer extends Model
 
     public function customerProfile()
     {
-        return $this->hasOne(Profile::class);
+        return $this->hasOne(Profile::class, 'customer_id');
     }
 }

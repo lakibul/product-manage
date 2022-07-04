@@ -16,9 +16,6 @@ class CustomerController extends Controller
     }
     public function searchProfile(Request $request)
     {
-        $customer = Profile::whereHas('customer', function (Builder $query) {
-            $query->where('name', 'like', 'PHP%');
-        })->get();
 
     }
     public function add()
