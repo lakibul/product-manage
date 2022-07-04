@@ -7,7 +7,7 @@
                     <form action="{{route('customer.profile')}}" method="post">
                         @csrf
                         <div>
-                            <select class="form-select min-w-150px me-3"  data-allow-clear="true" name="dead_missing">
+                            <select class="form-select min-w-150px me-3"  data-allow-clear="true" name="value">
                                 <option value="" disabled selected>Select by Profile</option>
                                 <option value="1" >With Profile</option>
                                 <option value="2" >Without Profile</option>

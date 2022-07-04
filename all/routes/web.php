@@ -22,11 +22,7 @@ use App\Http\Controllers\DisableProductController;
 */
 
 Route::get('/', [FrontController::class, 'index']);
-//Route::get('/', function () {
-////    phpinfo();
-//    $img = Image::make('download.jpg')->resize(40,50);
-//    return $img->response('jpg');
-//});
+
 //customer
 Route::get('/manage-customer', [CustomerController::class, 'index'])->name('customer.manage');
 Route::get('/add-customer', [CustomerController::class, 'add'])->name('customer.add');
