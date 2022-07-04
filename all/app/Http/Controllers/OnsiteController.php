@@ -8,6 +8,6 @@ class OnsiteController extends Controller
 {
     public function index()
     {
-        
+        return "home";
     }
 }
