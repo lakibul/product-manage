@@ -1,0 +1,79 @@
+@extends('master.admin')
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br/>
+                <h4>Edit Customer Profile</h4>
+                <hr/>
+                <br/>
+                <p class="text-center text-success">{{Session::get('message')}}</p>
+                <form action="{{route('profile.update', ['id'=>$profile->id])}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-md-3 col-form-label" style="margin-left: 0px;">Customer Name</label>
+                        <div class="col-md-9">
+                            <select name="customer_id" id="customer_id" style="background-color: blanchedalmond;">
+                                <option value="">{{$profile->customer->name}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-md-3 col-form-label">Age</label>
+                        <div class="col-md-9">
+                            <input type="number" class="form-control" name="age" value="{{$profile->age}}" placeholder="Enter Age"/>
+                            <span style="color: red">@error('age'){{$message}}@enderror</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-md-3 col-form-label">Occupation</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="occupation" value="{{$profile->occupation}}" placeholder="Enter Occupation">
+                            <span style="color: red">@error('occupation'){{$message}}@enderror</span>
+                        </div>
+
+                    </div>
+                    <br/>
+                    <div class="form-group row">
+                        <label for="income" class="col-sm-3 col-form-label">Monthly Income</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" value="{{$profile->income}}" name="income" id="income" placeholder="Income">
+                            <span style="color: red">@error('income'){{$message}}@enderror</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label">Home Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="address" value="{{$profile->address}}" placeholder="Address">
+                            <span style="color: red">@error('address'){{$message}}@enderror</span>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-3 col-form-label">Image</label>
+                        <div class="col-sm-9">
+                            <input type="file" class="form-control-file" value="" name="image" id="inputEmail3" accept="image/*">
+                            <img src="{{asset($profile->image)}}" alt="" height="80" width="100" class="mt-3">
+                            <span style="color: red">@error('image'){{$message}}@enderror</span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="submit" class="btn btn-success">Update Customer Info</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+
