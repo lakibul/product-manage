@@ -30,6 +30,7 @@ Route::get('/', [FrontController::class, 'index']);
 //customer
 Route::get('/manage-customer', [CustomerController::class, 'index'])->name('customer.manage');
 Route::get('/add-customer', [CustomerController::class, 'add'])->name('customer.add');
+Route::post('/profile-customer', [CustomerController::class, 'searchProfile'])->name('customer.profile');
 Route::post('/store-customer', [CustomerController::class, 'store'])->name('customer.store');
 Route::get('/edit-customer/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
 Route::post('/update-customer/{id}', [CustomerController::class, 'update'])->name('customer.update');

@@ -13,4 +13,9 @@ class Customer extends Model
     protected $fillable = [
         "admin_id", "merch_id", "name", "mobile"
     ];
+
+    public function customerProfile()
+    {
+        return $this->hasOne(Profile::class);
+    }
 }

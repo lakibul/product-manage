@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +13,13 @@ class CustomerController extends Controller
     {
         $customers = Customer::paginate(5);
         return view('dashboard.customer.index')->with(['customers'=>$customers]);
+    }
+    public function searchProfile(Request $request)
+    {
+        $customer = Profile::whereHas('customer', function (Builder $query) {
+            $query->where('name', 'like', 'PHP%');
+        })->get();
+
     }
     public function add()
     {
