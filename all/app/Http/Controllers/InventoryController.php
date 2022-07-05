@@ -11,8 +11,8 @@ class InventoryController extends Controller
 {
     public function index()
     {
-        $inventories = Inventory::with('products')->get();
-        return view('dashboard.inventory.index')->with(['inventories' => $inventories]);
+        $data['inventories'] = Inventory::with('products')->get();
+        return view('dashboard.inventory.index', $data);
     }
 
     public function add($id)
@@ -22,6 +22,8 @@ class InventoryController extends Controller
            'merch_id'=> Auth::guard('merchant')->user()->id,
             'product_id'=>$product->id,
         ]);
+        $product->status = 0;
+        $product->save();
         return back()->with('message', 'Product Added to Inventory successfully');
     }
 

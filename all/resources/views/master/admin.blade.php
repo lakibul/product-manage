@@ -23,9 +23,7 @@
     {{--    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">--}}
 
     <link href="{{asset('/')}}css/style.css" rel="stylesheet"/>
-    <link href="{{asset('/')}}css/import.css" rel="stylesheet"/>
-    <link href="{{asset('/')}}css/global.css" rel="stylesheet"/>
-    <link href="{{asset('/')}}css/plugins.bundle.css" rel="stylesheet"/>
+    <link href="{{asset('/')}}css/inventory.css" rel="stylesheet"/>
     <script src="{{asset('/')}}js/plugin.bundle.js"></script>
 
 

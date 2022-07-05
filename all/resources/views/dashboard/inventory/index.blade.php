@@ -1,5 +1,6 @@
 @extends('master.admin')
 @section('content')
+
     <div class="col-md-12">
         <h2>Product Inventory</h2>
     </div>
@@ -21,7 +22,7 @@
                                 <th>Name</th>
                                 <th>SKU Number</th>
                                 <th>Price</th>
-                                <th>Unit</th>
+                                <th style="text-align: center;">Unit</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -37,11 +38,12 @@
                                     <td>
                                         <form method="post" action="{{route('unit.add', ['id'=>$item->id])}}">
                                             @csrf
-                                            <div>
-                                                <label for="name">Enter Quantity</label>
+                                            <div class="input-counter">
+                                                <div class="" id="decrease" onclick="decreaseValue()" value="Increase Value"><span class="minus-btn"><i class="bx bx-minus"></i></span></div>
                                                 <input type="text" name="unit" id="unit" value="{{$item->unit}}">
+                                                <div class="" id="increase" onclick="increaseValue()" value="Increase Value"><span class="plus-btn"><i class="bx bx-plus"></i></span></div>
                                             </div>
-                                            <input type="submit" value="Submit" id="submit">
+                                            <input type="submit" value="Submit" id="submit" class="btn btn-warning" style="margin-right: -150px;margin-top: -70px;">
                                         </form>
                                     </td>
                                     <td><?php  $image = json_decode($item->products->image);?> <img src="{{ asset('product-images/'. $image[0]) }}" height="40" width="50" class=""> </td>
@@ -63,11 +65,21 @@
     </div>
 
 <script>
-    $(function() {
+    function increaseValue() {
+        var value = parseInt(document.getElementById('number').value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;
+        document.getElementById('number').value = value;
+    }
 
-        $("form div").append('<div class="inc button">+</div><div class="dec button">-</div>');
-
-    });
+    function decreaseValue() {
+        var value1 = this.value;
+        console.log(value1)
+        value = isNaN(value) ? 0 : value;
+        value < 1 ? value = 1 : '';
+        value--;
+        document.getElementById('number').value = value;
+    }
 </script>
 
 @endsection

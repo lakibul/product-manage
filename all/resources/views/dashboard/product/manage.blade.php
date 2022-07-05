@@ -7,11 +7,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    {{--                    <a href="" class="btn btn-warning my-3" data-toggle="modal" data-target="#exampleModal">Add Profile</a>--}}
                     <div class="row">
-
-                        <div class="col-md-8">
-                            <input type="text" name="search" id="search" placeholder="Search here..." class="form-control">
+                        <div class="col-md-6">
+                            <input type="text" name="search" id="search" placeholder="Search Product here..." class="form-control">
                         </div>
                         @if(Auth::guard('admin')->check())
                         <div class="col-md-4">
@@ -41,7 +39,7 @@
                                     <td>{{$item->sku}}</td>
                                     <td>{{$item->price}}</td>
                                     <td><?php  $image = json_decode($item->image);?> <img src="{{ asset('product-images/'. $image[0]) }}" height="40" width="50" class=""> </td>
-                                    <td>{{$item->status == 1 ? 'Added' : 'Not Added'}}</td>
+                                    <td>{{$item->status == 1 ? 'Not Added' : 'Added'}}</td>
                                     <td>
                                         @if(Auth::guard('admin')->check())
                                             <a href="{{route('product.edit', ['id'=>$item->id])}}" class="btn btn-success btn-sm">
@@ -54,9 +52,13 @@
 {{--                                            @if($item->status == 1)--}}
 {{--                                                <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-success">Active</a>--}}
 {{--                                            @else--}}
-{{--                                                <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-danger">Inactive</a>--}}
+{{--                                               <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-danger">Inactive</a>--}}
 {{--                                            @endif--}}
-                                            <a href="{{route('inventory.add', ['id'=>$item->id])}}" class="btn btn-warning"><i class="fa fa-plus"> Add to Inventory</i></a>
+                                            @if($item->status == 1)
+                                                <a href="{{route('inventory.add', ['id'=>$item->id])}}" class="btn btn-warning"><i class="fa fa-plus"> Add to Inventory</i></a>
+                                            @else
+                                                <div class="btn btn-success"><i class="fa fa-arrow-up"> Added</i></div>
+                                            @endif
                                         @endif
                                     </td>
                                 </tr>

@@ -64,6 +64,7 @@ Route::post('/add-unit/{id}', [InventoryController::class, 'addUnit'])->name('un
 //Disable Product
 Route::get('/disable-product/{id}', [DisableProductController::class, 'disable'])->name('product.disable');
 Route::get('/disable-product-index', [DisableProductController::class, 'index'])->name('disable.index');
+Route::get('/move-disable-product/{id}', [DisableProductController::class, 'move'])->name('disable.move');
 /*
 |--------------------------------------------------------------------------
 | Multi Authentication Routes

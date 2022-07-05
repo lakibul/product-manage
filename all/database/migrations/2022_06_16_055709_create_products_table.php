@@ -25,7 +25,6 @@ return new class extends Migration
             $table->longText('long_description')->nullable();
             $table->string('price')->nullable();
             $table->string('image')->nullable();
-            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
