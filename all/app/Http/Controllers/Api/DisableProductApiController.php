@@ -9,11 +9,11 @@ class DisableProductApiController extends Controller
 {
     public function disable()
     {
-
+        //test
     }
 
     public function move()
     {
-        
+
     }
 }
