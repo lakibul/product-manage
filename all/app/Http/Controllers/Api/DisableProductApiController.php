@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class DisableProductApiController extends Controller
 {
-    public function disable()
+    public function disable($id)
     {
         $inventory_product = Inventory::find($id);
         DisableProduct::create([
