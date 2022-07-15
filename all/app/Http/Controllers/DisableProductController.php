@@ -42,5 +42,9 @@ class DisableProductController extends Controller
         return redirect('/inventory')->with('message', 'Product Moved to Inventory Successfully');
     }
 
+    public function test()
+    {
+
+    }
 
 }
