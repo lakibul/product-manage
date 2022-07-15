@@ -26,6 +26,6 @@ class FrontController extends Controller
     }
     public function home()
     {
-
+        //confirm
     }
 }
