@@ -14,6 +14,6 @@ class DisableProductApiController extends Controller
 
     public function move()
     {
-        
+
     }
 }
