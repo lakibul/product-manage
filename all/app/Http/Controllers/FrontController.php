@@ -15,17 +15,4 @@ class FrontController extends Controller
 //        $hasntProfile = Customer::doesntHave('customerProfile')->get();
 //        return $hasProfile;
     }
-
-    public function test()
-    {
-        //final test
-    }
-    public function onsite()
-    {
-        //confirm
-    }
-    public function home()
-    {
-        //confirm
-    }
 }
