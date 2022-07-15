@@ -22,6 +22,10 @@ class FrontController extends Controller
     }
     public function onsite()
     {
+
+    }
+    public function home()
+    {
         
     }
 }
