@@ -44,7 +44,13 @@ class DisableProductController extends Controller
 
     public function test()
     {
+<<<<<<< HEAD
 
     }
+=======
+        //from ide
+    }
+
+>>>>>>> 3039b2f3102a80c4943277a63249a679e52187d5
 
 }
