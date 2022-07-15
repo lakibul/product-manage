@@ -18,6 +18,6 @@ class FrontController extends Controller
 
     public function test()
     {
-        //final test 
+        //final test
     }
 }
