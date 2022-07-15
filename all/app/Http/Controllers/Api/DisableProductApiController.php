@@ -9,6 +9,6 @@ class DisableProductApiController extends Controller
 {
     public function disable()
     {
-        
+     //ok
     }
 }
