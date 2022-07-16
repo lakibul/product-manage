@@ -53,7 +53,6 @@ Route::group(["middleware"=>["auth:api"]], function (){
     //Inventory
     Route::get('/inventory', [InventoryApiController::class, 'index']);
     Route::get('/add-inventory/{id}', [InventoryApiController::class, 'add']);
-    Route::post('/store-inventory/{id}', [InventoryApiController::class, 'store']);
     Route::post('/add-unit/{id}', [InventoryApiController::class, 'addUnit']);
 
     Route::get('/disable-product/{id}', [DisableProductApiController::class, 'disable']);
