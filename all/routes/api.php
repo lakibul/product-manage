@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\ProfileApiController;
 use App\Http\Controllers\Api\ProductApiController;
 use App\Http\Controllers\Api\MultipleUploadController;
 use App\Http\Controllers\Api\InventoryApiController;
+use App\Http\Controllers\Api\DisableProductApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,10 @@ Route::group(["middleware"=>["auth:api"]], function (){
     Route::get('/add-inventory/{id}', [InventoryApiController::class, 'add']);
     Route::post('/store-inventory/{id}', [InventoryApiController::class, 'store']);
     Route::post('/add-unit/{id}', [InventoryApiController::class, 'addUnit']);
+
+    Route::get('/disable-product/{id}', [DisableProductApiController::class, 'disable']);
+    Route::get('/disable-product-index', [DisableProductApiController::class, 'index']);
+    Route::get('/move-disable-product/{id}', [DisableProductApiController::class, 'move']);
 
 });
 Route::post('/add-multiple-images', [MultipleUploadController::class, 'store']);

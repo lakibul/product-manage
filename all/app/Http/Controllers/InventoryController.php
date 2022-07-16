@@ -27,11 +27,6 @@ class InventoryController extends Controller
         return back()->with('message', 'Product Added to Inventory successfully');
     }
 
-    public function store(Request $request, $id)
-    {
-
-    }
-
     public function addUnit(Request $request, $id)
     {
         $request->validate([
