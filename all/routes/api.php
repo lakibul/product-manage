@@ -62,6 +62,7 @@ Route::group(["middleware"=>["auth:api"]], function (){
 });
 Route::post('/add-multiple-images', [MultipleUploadController::class, 'store']);
 Route::post('/add-single-image', [MultipleUploadController::class, 'uploadImage']);
+Route::get('/image', [MultipleUploadController::class, 'getOriginalUrlAttribute']);
 
 
 

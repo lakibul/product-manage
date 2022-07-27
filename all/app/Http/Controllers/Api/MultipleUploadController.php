@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 //use App\Models\Image;
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Image;
 
 class MultipleUploadController extends Controller
@@ -39,15 +40,43 @@ class MultipleUploadController extends Controller
         {
             foreach($request->file('filenames') as $file)
             {
-                $filename = hexdec(uniqid()) . '.' . $file->getClientOriginalExtension();
-                Image::make( $file )->resize( 40, 60 )->save( 'resized-images/' . $filename );
-                $final_upload[] = 'image'.$filename;
+                $img = $file->getClientOriginalName();
+                $filename = $img . '-original.' . $file->getClientOriginalExtension();
+                $filename2 = $img . '-80x60.' . $file->getClientOriginalExtension();
+                $filename3 = $img . '-120x80.' . $file->getClientOriginalExtension();
+                $originalImage = Image::make($file);
+
+                $originalImage->stream();
+                Storage::disk(config('app.STORAGE_DRIVER'))->put('resized-images/' . $filename, $originalImage);
+
+                $originalImage->resize(80, 60, function ($constraint) {
+                    //$constraint->aspectRatio();
+                });
+
+                $originalImage->stream();
+                Storage::disk(config('app.STORAGE_DRIVER'))->put('resized-images/' . $filename2, $originalImage);
+
+                $originalImage->resize(100, 80, function ($constraint) {
+                    //$constraint->aspectRatio();
+                });
+
+                $originalImage->stream();
+                Storage::disk(config('app.STORAGE_DRIVER'))->put('resized-images/' . $filename3, $originalImage);
             }
         }
-        $file= new File();
-        $file->filenames = json_encode($final_upload);
-        $file->save();
+        $final_upload[] = $filename;
         return response()->json(['file_uploaded'], 200);
+    }
+
+    public function getOriginalUrlAttribute()
+    {
+        $destinationPath =   $this->folder_name . '/' . $this->file_name;
+
+        if (config('app.STORAGE_DRIVER') === "s3") {
+            $s3 = Storage::disk(config('app.STORAGE_DRIVER'));
+            return $s3->url($destinationPath);
+        }
+        return asset('application/public/storage/' . $this->FileDir);
     }
 
 }
