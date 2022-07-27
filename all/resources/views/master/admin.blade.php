@@ -171,6 +171,12 @@
                         </li>
                     @endif
 
+                    <li>
+                        <a href="{{route('image.index')}}" class="waves-effect">
+                            <i class="bx bx-briefcase-alt-2"></i>
+                            <span>Image Manipulation</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- Sidebar -->

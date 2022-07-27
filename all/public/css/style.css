@@ -13,6 +13,22 @@
     z-index: 99;
 }
 
+.professional-button {
+    position: relative;
+    padding: 10px 35px;
+    background: #BAC8D3;
+    border: 1px solid #23445D;
+    border-radius: 5px;
+}
+
+.professional-button input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 0;
+}
+
 td i {
     text-align:center;
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 //use App\Models\Image;
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Image;
 
@@ -64,19 +65,24 @@ class MultipleUploadController extends Controller
                 Storage::disk(config('app.STORAGE_DRIVER'))->put('resized-images/' . $filename3, $originalImage);
             }
         }
-        $final_upload[] = $filename;
+        File::insert([
+            'filenames' => json_decode($filename),
+        ]);
         return response()->json(['file_uploaded'], 200);
     }
 
-    public function getOriginalUrlAttribute()
+    public function getOriginalUrlAttribute($filename)
     {
-        $destinationPath =   $this->folder_name . '/' . $this->file_name;
-
-        if (config('app.STORAGE_DRIVER') === "s3") {
-            $s3 = Storage::disk(config('app.STORAGE_DRIVER'));
-            return $s3->url($destinationPath);
+        $path = storage_path('resized-images/' . $filename);
+        if (!File::exists($path)) {
+            abort(404);
         }
-        return asset('application/public/storage/' . $this->FileDir);
+        $file = File::get($path);
+        $type = File::mimeType($path);
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+
+        return $response;
     }
 
 }

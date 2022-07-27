@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\DisableProductController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,10 @@ Route::post('/add-unit/{id}', [InventoryController::class, 'addUnit'])->name('un
 Route::get('/disable-product/{id}', [DisableProductController::class, 'disable'])->name('product.disable');
 Route::get('/disable-product-index', [DisableProductController::class, 'index'])->name('disable.index');
 Route::get('/move-disable-product/{id}', [DisableProductController::class, 'move'])->name('disable.move');
+
+//Image Manipulation
+Route::get('/image-index', [ImageController::class, 'index'])->name('image.index');
+Route::post('/image-save', [ImageController::class, 'store'])->name('image.save');
 /*
 |--------------------------------------------------------------------------
 | Multi Authentication Routes
