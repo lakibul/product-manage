@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/all/public/profile-images/277526336_351433697026125_2393744643444167696_n.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/profile-images/getty_481292845_77896.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/profile-images/istockphoto-175482570-170667a.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ImageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
