@@ -79,7 +79,4 @@ class ImageController extends Controller
         return redirect()->back()->with('message', 'Product Added Successfully');
     }
 
-    public function test(){
-        
-    }
 }
