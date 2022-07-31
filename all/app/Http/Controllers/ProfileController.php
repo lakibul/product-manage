@@ -16,16 +16,14 @@ class ProfileController extends Controller
         return view('dashboard.profile.add')->with(['customer'=>$customer]);
     }
 
-    public function index()
+    public function index($id)
     {
-        $profiles = Profile::with('customer')->get();
-        return view('dashboard.profile.manage')->with(['profiles'=>$profiles]);
+        $data['person'] = Customer::with('customerProfile')->get()->find($id);
+        return view('dashboard.profile.manage', $data);
     }
 
     public function store(Request $request)
     {
-
-
         $request->validate([
             'customer_id' => 'required',
             'gender' => 'required',
@@ -35,9 +33,8 @@ class ProfileController extends Controller
             'address' => 'required',
             'image' => 'mimes:jpg,jpeg,png|required|max:1024',
         ]);
-//        dd($request->all());
         Profile::newProfile($request);
-        return redirect('/manage-profile')->with('message', 'Profile Added Successfully');
+        return redirect('/manage-customer')->with('message', 'Profile Added Successfully');
     }
 
     public function edit($id)
@@ -57,7 +54,7 @@ class ProfileController extends Controller
         ]);
 
         Profile::updateProfile($request, $id);
-        return redirect('/manage-profile')->with('message', 'Profile Updated Successfully');
+        return redirect()->route('customer.manage')->with('message', 'Profile Updated Successfully');
     }
 
     public function delete($id)
@@ -69,7 +66,7 @@ class ProfileController extends Controller
         }
         $this->profile->delete();
 
-        return redirect('/manage-profile')->with('message', 'Profile Deleted Successfully');
+        return redirect('/manage-customer')->with('message', 'Profile Deleted Successfully');
     }
 
 }

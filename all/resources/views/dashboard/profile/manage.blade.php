@@ -2,7 +2,7 @@
 @section('content')
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h2 class="section-title mb-0">Profile</h2>
+            <h2 class="section-title mb-0">{{@$person->name}}'s Profile</h2>
             <div class="text-right">
                 <a href="{{route('customer.manage')}}" class="btn btn-info">Go Back to Customer Index</a>
             </div>
@@ -13,7 +13,6 @@
             <div class="card">
                 <div class="card-body">
 {{--                    <a href="" class="btn btn-warning my-3" data-toggle="modal" data-target="#exampleModal">Add Profile</a>--}}
-
                     <p class="text-center text-success">{{Session::get('message')}}</p>
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -32,27 +31,25 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($profiles as $person)
                             <tr>
-                                <td scope="row">{{$loop->iteration}}</td>
-                                <td>{{$person->customer->name}}</td>
-                                <td>{{$person->customer->mobile}}</td>
-                                <td>{{$person->age}}</td>
-                                <td>{{$person->gender}}</td>
-                                <td>{{$person->occupation}}</td>
-                                <td>{{$person->income}}</td>
-                                <td>{{$person->address}}</td>
-                                    <td><img src="{{asset($person->image)}}" height="40" width="50" alt=""/></td>
+                                <td scope="row">{{@$loop->iteration}}</td>
+                                <td>{{@$person->name}}</td>
+                                <td>{{@$person->mobile}}</td>
+                                <td>{{@$person->customerProfile->age}}</td>
+                                <td>{{@$person->customerProfile->gender}}</td>
+                                <td>{{@$person->customerProfile->occupation}}</td>
+                                <td>{{@$person->customerProfile->income}}</td>
+                                <td>{{@$person->customerProfile->address}}</td>
+                                    <td><img src="{{asset(@$person->customerProfile->image)}}" height="40" width="50" alt=""/></td>
                                 <td>
-                                    <a href="{{route('profile.edit', ['id'=>$person->id])}}" class="btn btn-success btn-sm">
+                                    <a href="{{route('profile.edit', ['id'=>@$person->id])}}" class="btn btn-success btn-sm">
                                         <i class="fa fa-edit"> Edit</i>
                                     </a>
-                                    <a href="{{route('profile.delete', ['id'=>$person->id])}}" class="btn btn-danger btn-sm">
+                                    <a href="{{route('profile.delete', ['id'=>@$person->id])}}" class="btn btn-danger btn-sm">
                                         <i class="fa fa-trash"> Delete</i>
                                     </a>
                                 </td>
                             </tr>
-                        @endforeach
                         </tbody>
                     </table>
 

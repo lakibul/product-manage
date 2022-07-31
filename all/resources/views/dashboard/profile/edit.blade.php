@@ -8,17 +8,29 @@
                 <hr/>
                 <br/>
                 <p class="text-center text-success">{{Session::get('message')}}</p>
-                <form action="{{route('profile.update', ['id'=>$profile->id])}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('profile.update', ['id'=>$profile->id])}}" method="post" enctype="multipart/form-data" style="width: 50%">
                     @csrf
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-md-3 col-form-label" style="margin-left: 0px;">Customer Name</label>
+                        <label for="customer_id" class="col-md-3 col-form-label" style="margin-left: 0px;">Customer Name</label>
                         <div class="col-md-9">
-                            <select name="customer_id" id="customer_id" style="background-color: blanchedalmond;">
+                            <select name="customer_id" id="customer_id" style="background-color: blanchedalmond; border-radius: 5px">
                                 <option value="">{{$profile->customer->name}}</option>
                             </select>
                         </div>
                     </div>
-
+                    <br>
+                    <div class="form-group row">
+                        <label for="gender" class="col-md-3 col-form-label" style="margin-left: 0px;">Gender</label>
+                        <div class="col-md-9">
+                            <select name="gender" id="gender" style="border-radius: 5px">
+                                <option>{{$profile->gender}}</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <span style="color: red">@error('gender'){{$message}}@enderror</span>
+                        </div>
+                    </div>
+                    <br/>
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-md-3 col-form-label">Age</label>
                         <div class="col-md-9">
@@ -37,16 +49,16 @@
                     </div>
                     <br/>
                     <div class="form-group row">
-                        <label for="income" class="col-sm-3 col-form-label">Monthly Income</label>
-                        <div class="col-sm-9">
+                        <label for="income" class="col-md-3 col-form-label">Monthly Income</label>
+                        <div class="col-md-9">
                             <input type="number" class="form-control" value="{{$profile->income}}" name="income" id="income" placeholder="Income">
                             <span style="color: red">@error('income'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <br/>
                     <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-3 col-form-label">Home Address</label>
-                        <div class="col-sm-9">
+                        <label for="inputPassword3" class="col-md-3 col-form-label">Home Address</label>
+                        <div class="col-md-9">
                             <input type="text" class="form-control" name="address" value="{{$profile->address}}" placeholder="Address">
                             <span style="color: red">@error('address'){{$message}}@enderror</span>
                         </div>
@@ -54,16 +66,16 @@
                     <br/>
 
                     <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Image</label>
-                        <div class="col-sm-9">
+                        <label for="inputEmail3" class="col-md-3 col-form-label">Image</label>
+                        <div class="col-md-9">
+                            <img src="{{asset($profile->image)}}" alt="" height="80" width="100" class="mt-3 text-left">
                             <input type="file" class="form-control-file" value="" name="image" id="inputEmail3" accept="image/*">
-                            <img src="{{asset($profile->image)}}" alt="" height="80" width="100" class="mt-3">
                             <span style="color: red">@error('image'){{$message}}@enderror</span>
                         </div>
                     </div>
                     <br/>
                     <div class="form-group row justify-content-end">
-                        <div class="col-sm-9">
+                        <div class="col-md-9">
                             <div>
                                 <button type="submit" class="btn btn-success">Update Customer Info</button>
                             </div>

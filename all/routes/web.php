@@ -38,7 +38,7 @@ Route::get('/search-customer', [CustomerController::class, 'searchCustomer'])->n
 
 //profile
 Route::get('/add-profile/{id}', [ProfileController::class, 'add'])->name('profile.add');
-Route::get('/manage-profile', [ProfileController::class, 'index'])->name('profile.manage');
+Route::get('/manage-profile/{id}', [ProfileController::class, 'index'])->name('profile.manage');
 Route::post('/store-profile', [ProfileController::class, 'store'])->name('profile.store');
 Route::get('/edit-profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::post('/update-profile/{id}', [ProfileController::class, 'update'])->name('profile.update');

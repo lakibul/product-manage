@@ -9,14 +9,15 @@ class Profile extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "customer_id", "age", "occupation", "income", "address", "image"
+    ];
+
     public function customer()
     {
         return $this->belongsTo(Customer::class, 'customer_id');
     }
 
-    protected $fillable = [
-        "customer_id", "age", "occupation", "income", "address", "image"
-    ];
 
     private static $profile;
     private static $image;
@@ -67,6 +68,7 @@ class Profile extends Model
         }
 
         self::$profile->age = $request->age;
+        self::$profile->gender = $request->gender;
         self::$profile->occupation = $request->occupation;
         self::$profile->income = $request->income;
         self::$profile->address = $request->address;

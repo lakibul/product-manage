@@ -62,7 +62,7 @@
                                     <td>{{$customer->mobile}}</td>
                                     <td>
                                         <a href="{{route('customer.edit', ['id' => $customer->id])}}"
-                                           class="btn btn-danger btn-sm ">
+                                           class="btn btn-success btn-sm ">
                                             <i class="fa fa-edit"> Edit</i>
                                         </a>
                                         <a href="{{route('customer.delete', ['id' => $customer->id])}}"
@@ -71,12 +71,11 @@
                                         </a>
                                     </td>
                                     <td>
-
                                         <a href="{{route('profile.add', ['id' => $customer->id])}}"
                                            class="btn btn-info btn-sm icon">
                                             <i class="fa fa-plus"> Add</i>
                                         </a>
-                                        <a href="{{route('profile.manage')}}" class="btn btn-info btn-sm icon">
+                                        <a href="{{route('profile.manage', ['id' => $customer->id])}}" class="btn btn-info btn-sm icon">
                                             <i class="fa fa-fill"> Manage</i>
                                         </a>
                                     </td>

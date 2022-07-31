@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="" />
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/all/public/profile-images/277526336_351433697026125_2393744643444167696_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/public/profile-images/getty_481292845_77896.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/public/profile-images/istockphoto-175482570-170667a.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,15 +162,19 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2CiLDCBZ8A4F7FFHibfZqxnI3UQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/product-manage&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "last_opened_file_path": "C:/xampp/htdocs/product-manage"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
       <option name="pathToComposerJson" value="$PROJECT_DIR$/all/composer.json" />
@@ -180,5 +198,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
