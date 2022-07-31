@@ -18,4 +18,9 @@ class File extends Model
     {
         return $this->morphMany(Other::class, 'origin');
     }
+
+    public function fileManager(): MorphMany
+    {
+        return $this->morphMany(FileManager::class, 'origin');
+    }
 }

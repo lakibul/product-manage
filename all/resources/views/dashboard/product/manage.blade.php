@@ -1,9 +1,15 @@
 @extends('master.admin')
 @section('content')
-<div class="col-md-12">
-    <h2>Product Index</h2>
-</div>
-    <div class="row">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h2 class="section-title mb-0">Product Index</h2>
+            @if(Auth::guard('admin')->check())
+                <div class="col-md-4">
+                    <a href="{{route('product.add')}}" class="btn btn-info" style="float: right;font-size: 15px;">Add Product</a>
+                </div>
+            @endif
+        </div>
+    <div class="card-header pb-3">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -11,11 +17,6 @@
                         <div class="col-md-6">
                             <input type="text" name="search" id="search" placeholder="Search Product here..." class="form-control">
                         </div>
-                        @if(Auth::guard('admin')->check())
-                        <div class="col-md-4">
-                            <a href="{{route('product.add')}}" class="btn btn-info" style="float: right;font-size: 15px;">Add Product</a>
-                        </div>
-                        @endif
                     </div>
                     <p class="text-center text-success mt-5 mb-5">{{Session::get('message')}}</p>
                     <div class="table-data">
@@ -49,11 +50,11 @@
                                                 <i class="fa fa-trash"> Delete</i>
                                             </a>
                                         @elseif(Auth::guard('merchant')->check())
-{{--                                            @if($item->status == 1)--}}
-{{--                                                <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-success">Active</a>--}}
-{{--                                            @else--}}
-{{--                                               <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-danger">Inactive</a>--}}
-{{--                                            @endif--}}
+                                            {{--                                            @if($item->status == 1)--}}
+                                            {{--                                                <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-success">Active</a>--}}
+                                            {{--                                            @else--}}
+                                            {{--                                               <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-danger">Inactive</a>--}}
+                                            {{--                                            @endif--}}
                                             @if($item->status == 1)
                                                 <a href="{{route('inventory.add', ['id'=>$item->id])}}" class="btn btn-warning"><i class="fa fa-plus"> Add to Inventory</i></a>
                                             @else
@@ -71,6 +72,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     @include('dashboard.product.product_js');
 @endsection

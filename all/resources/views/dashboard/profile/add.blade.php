@@ -8,7 +8,7 @@
                 <hr/>
                 <br/>
                 <p class="text-center text-success">{{Session::get('message')}}</p>
-                <form action="{{route('profile.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('profile.store')}}" method="post" enctype="multipart/form-data" style="width: 50%;">
                     @csrf
 
                     <div class="form-group row">

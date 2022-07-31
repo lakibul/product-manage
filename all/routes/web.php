@@ -70,6 +70,7 @@ Route::get('/move-disable-product/{id}', [DisableProductController::class, 'move
 //Image Manipulation
 Route::get('/image-index', [ImageController::class, 'index'])->name('image.index');
 Route::post('/image-save', [ImageController::class, 'store'])->name('image.save');
+Route::post('/multiple-image', [ImageController::class, 'storeImages'])->name('image.multiple');
 /*
 |--------------------------------------------------------------------------
 | Multi Authentication Routes

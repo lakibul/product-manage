@@ -31,9 +31,9 @@
         }
     </style>
 
-
     <section>
         <div class="container">
+{{--            <p class="text-center text-success">{{Session::get('message')}}</p>--}}
             <form action="{{route('image.save')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row button-center">
@@ -60,6 +60,16 @@
                     </div>
                 </div>
             </form>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="card-body">
+                    {{--                    @dump(@$images);--}}
+                    @foreach(@$images as $img)
+                        <img src="{{ @$img->url }}" class="img-thumbnail" style="width: 100px; padding: 5px" alt="img">
+                    @endforeach
+                </div>
+            </div>
         </div>
     </section>
 

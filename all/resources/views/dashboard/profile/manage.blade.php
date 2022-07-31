@@ -1,11 +1,19 @@
 @extends('master.admin')
 @section('content')
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h2 class="section-title mb-0">Profile</h2>
+            <div class="text-right">
+                <a href="{{route('customer.manage')}}" class="btn btn-info">Go Back to Customer Index</a>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
 {{--                    <a href="" class="btn btn-warning my-3" data-toggle="modal" data-target="#exampleModal">Add Profile</a>--}}
-                    <h4 class="card-title">Manage Customer Profile</h4>
+
                     <p class="text-center text-success">{{Session::get('message')}}</p>
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">

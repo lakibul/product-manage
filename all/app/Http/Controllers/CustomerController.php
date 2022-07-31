@@ -17,14 +17,12 @@ class CustomerController extends Controller
     public function searchProfile(Request $request)
     {
         if ($request->value == 1){
-            $hasprofile = Profile::with('customer')->whereHas('customer', function ($q) {
-                $q->where('age', 'like', '23');
-            })->get();
-            return $hasprofile;
+            $data['hasProfile'] = Profile::with('customer')->whereHas('customer')->get();
+            return view('dashboard.check-profile.show', $data);
         }
         else{
-            $hasntProfile = Customer::with('customerProfile')->wheredoesntHave('customerProfile')->get();
-            return $hasntProfile;
+            $data['hasNotProfile'] = Customer::with('customerProfile')->wheredoesntHave('customerProfile')->get();
+            return view('dashboard.check-profile.show', $data);
         }
 
     }

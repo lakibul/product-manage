@@ -8,7 +8,7 @@
                 <hr/>
                 <br/>
                 <p class="text-center text-success">{{Session::get('message')}}</p>
-                <form action="{{route('customer.update', ['id'=>$customer->id])}}" method="post">
+                <form action="{{route('customer.update', ['id'=>$customer->id])}}" method="post" style="width: 50%">
                     @csrf
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-md-3 col-form-label">Enter Your Name</label>

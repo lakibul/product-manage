@@ -19,37 +19,53 @@ class FileManager extends Model
         return $this->morphTo();
     }
 
-    public function makeUpload($to, $file): ?string
+    public function makeUpload($to, $file): ?array
     {
         try {
+            $imgUrl=[];
             $file_name = time() . Str::uuid();
             $extension = $file->extension();
-            $file_name = $file_name . '.' . $extension;
+            $file_name = hexdec(uniqid()) . '.' . $extension;
+            $file_name2 = hexdec(uniqid()) . '.' . $extension;
 
             $path = $to . '/' . $file_name;
-            $img = Image::make($file->getRealPath());
-            $img->orientate();
-            $img->stream();
+            $thumbnail = $to . '/' . $file_name2;
+            $originalImage = Image::make($file->getRealPath());
 
-            Storage::disk(config('app.storage_driver'))->put($path, $img, 'public');
+            $originalImage->orientate();
+            $originalImage->stream();
+            Storage::disk(config('app.storage_driver'))->put($path, $originalImage, 'public');
+            $imgUrl[] = $path;
 
-            return $path;
+            $originalImage->resize(80, 60, function ($constraint) {
+                //$constraint->aspectRatio();
+            });
+            $originalImage->stream();
+            Storage::disk(config('app.STORAGE_DRIVER'))->put($thumbnail, $originalImage, 'public');
+            $imgUrl[] = $thumbnail;
+
+            return $imgUrl;
         } catch (Exception $exception) {
-            return null;
+            return [];
         }
     }
 
-    public function upload($to, $file): FileManager
+    public function upload($to, $file): array
     {
         $path = $this->makeUpload($to, $file);
-        $file_manager = new self();
-        if ($path) {
-            $file_manager->url = $path;
-            $file_manager->save();
-        } else {
-            $file_manager->id = 0;
+        $select=[];
+        foreach ($path as $item){
+            $file_manager = new self();
+            if ($item) {
+                $file_manager->url = $item;
+                $file_manager->save();
+                $select[]=  $file_manager;
+            } else {
+                $file_manager->id = 0;
+                $select[]=  $file_manager;
+            }
         }
-        return $file_manager;
+        return $select;
     }
 
     public function uploadUpdate($to, $file): FileManager

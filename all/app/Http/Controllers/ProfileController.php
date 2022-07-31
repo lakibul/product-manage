@@ -18,13 +18,7 @@ class ProfileController extends Controller
 
     public function index()
     {
-//        $profiles = Profile::with('customer')->whereHas('customer', function ($query){
-//            $query->where('name', 'Rahim');
-//        })
-//        ->get()
-//        ->toArray();
         $profiles = Profile::with('customer')->get();
-//        dd($profiles);
         return view('dashboard.profile.manage')->with(['profiles'=>$profiles]);
     }
 

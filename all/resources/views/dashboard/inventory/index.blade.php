@@ -9,9 +9,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-8">
-                            <input type="text" name="search" id="search" placeholder="Search here..." class="form-control">
-                        </div>
+{{--                        <div class="col-md-8">--}}
+{{--                            <input type="text" name="search" id="search" placeholder="Search here..." class="form-control">--}}
+{{--                        </div>--}}
                     </div>
                     <p class="text-center text-success mt-5 mb-5">{{Session::get('message')}}</p>
                     <div class="table-data">
@@ -39,7 +39,7 @@
                                         <form method="post" action="{{route('unit.add', ['id'=>$item->id])}}">
                                             @csrf
                                             <div class="input-counter">
-                                                <div class="" id="decrease" onclick="decreaseValue()" value="Increase Value"><span class="minus-btn"><i class="bx bx-minus"></i></span></div>
+                                                <div class="" id="decrease" onclick="decreaseValue()" value="Decrease Value"><span class="minus-btn"><i class="bx bx-minus"></i></span></div>
                                                 <input type="text" name="unit" id="unit" value="{{$item->unit}}">
                                                 <div class="" id="increase" onclick="increaseValue()" value="Increase Value"><span class="plus-btn"><i class="bx bx-plus"></i></span></div>
                                             </div>
@@ -66,19 +66,20 @@
 
 <script>
     function increaseValue() {
-        var value = parseInt(document.getElementById('number').value, 10);
-        value = isNaN(value) ? 0 : value;
-        value++;
-        document.getElementById('number').value = value;
+        var currentVal = document.getElementById('unit').value;
+        console.log("current cart value",currentVal);
+        currentVal = isNaN(currentVal) ? 0 : currentVal;
+        currentVal++;
+        document.getElementById('unit').value = currentVal;
     }
 
     function decreaseValue() {
-        var value1 = this.value;
-        console.log(value1)
-        value = isNaN(value) ? 0 : value;
-        value < 1 ? value = 1 : '';
-        value--;
-        document.getElementById('number').value = value;
+        var currentVal = document.getElementById('unit').value;
+        console.log("current cart value",currentVal);
+        currentVal = isNaN(currentVal) ? 0 : currentVal;
+        currentVal < 1 ? currentVal = 1 : '';
+        currentVal--;
+        document.getElementById('unit').value = currentVal;
     }
 </script>
 
