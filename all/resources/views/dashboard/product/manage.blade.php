@@ -32,21 +32,25 @@
                                 <th>Action</th>
                             </tr>
                             </thead>
-                            @foreach($products as $item)
+                            @foreach(@$products as $item)
                                 <tbody>
                                 <tr>
-                                    <td scope="row">{{$loop->iteration}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->sku}}</td>
-                                    <td>{{$item->price}}</td>
-                                    <td><?php  $image = json_decode($item->image);?> <img src="{{ asset('product-images/'. $image[0]) }}" height="40" width="50" class=""> </td>
-                                    <td>{{$item->status == 1 ? 'Not Added' : 'Added'}}</td>
+                                    <td scope="row">{{@$loop->iteration}}</td>
+                                    <td>{{@$item->name}}</td>
+                                    <td>{{@$item->sku}}</td>
+                                    <td>{{@$item->price}}</td>
+                                    <td>
+                                        @foreach(@$item->fileManager as $img)
+                                            <img src="{{ $img->url[0] }}" height="40" width="50" alt=""/>
+                                        @endforeach
+                                    </td>
+                                    <td>{{@$item->status == 1 ? 'Not Added' : 'Added'}}</td>
                                     <td>
                                         @if(Auth::guard('admin')->check())
-                                            <a href="{{route('product.edit', ['id'=>$item->id])}}" class="btn btn-success btn-sm">
+                                            <a href="{{route('product.edit', ['id'=>@$item->id])}}" class="btn btn-success btn-sm">
                                                 <i class="fa fa-edit"> Edit</i>
                                             </a>
-                                            <a href="{{route('product.delete', ['id'=>$item->id])}}" class="btn btn-danger btn-sm">
+                                            <a href="{{route('product.delete', ['id'=>@$item->id])}}" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash"> Delete</i>
                                             </a>
                                         @elseif(Auth::guard('merchant')->check())
@@ -55,8 +59,8 @@
                                             {{--                                            @else--}}
                                             {{--                                               <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-danger">Inactive</a>--}}
                                             {{--                                            @endif--}}
-                                            @if($item->status == 1)
-                                                <a href="{{route('inventory.add', ['id'=>$item->id])}}" class="btn btn-warning"><i class="fa fa-plus"> Add to Inventory</i></a>
+                                            @if(@$item->status == 1)
+                                                <a href="{{route('inventory.add', ['id'=>@$item->id])}}" class="btn btn-warning"><i class="fa fa-plus"> Add to Inventory</i></a>
                                             @else
                                                 <div class="btn btn-success"><i class="fa fa-arrow-up"> Added</i></div>
                                             @endif

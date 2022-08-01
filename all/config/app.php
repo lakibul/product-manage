@@ -58,6 +58,8 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+    'storage_driver' => env('STORAGE_DRIVER', 'storage'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -211,7 +213,8 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
 
-        'Image' => Intervention\Image\Facades\Image::class
+        'Storage' => Illuminate\Support\Facades\Storage::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ])->toArray(),
 
 //    'aliases' => [

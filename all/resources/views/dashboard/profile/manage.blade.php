@@ -40,12 +40,16 @@
                                 <td>{{@$person->customerProfile->occupation}}</td>
                                 <td>{{@$person->customerProfile->income}}</td>
                                 <td>{{@$person->customerProfile->address}}</td>
-                                    <td><img src="{{asset(@$person->customerProfile->image)}}" height="40" width="50" alt=""/></td>
                                 <td>
-                                    <a href="{{route('profile.edit', ['id'=>@$person->id])}}" class="btn btn-success btn-sm">
+                                    @foreach(@$person->customerProfile->fileManager as $img)
+                                        <img src="{{ $img->url[0] }}" height="40" width="50" alt=""/>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    <a href="{{route('profile.edit', ['id'=>@$person->customerProfile->id])}}" class="btn btn-success btn-sm">
                                         <i class="fa fa-edit"> Edit</i>
                                     </a>
-                                    <a href="{{route('profile.delete', ['id'=>@$person->id])}}" class="btn btn-danger btn-sm">
+                                    <a href="{{route('profile.delete', ['id'=>@$person->customerProfile->id])}}" class="btn btn-danger btn-sm">
                                         <i class="fa fa-trash"> Delete</i>
                                     </a>
                                 </td>

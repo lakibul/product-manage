@@ -14,7 +14,7 @@
                         <label for="customer_id" class="col-md-3 col-form-label" style="margin-left: 0px;">Customer Name</label>
                         <div class="col-md-9">
                             <select name="customer_id" id="customer_id" style="background-color: blanchedalmond; border-radius: 5px">
-                                <option value="">{{$profile->customer->name}}</option>
+                                <option value="{{$profile->customer->id}}">{{$profile->customer->name}}</option>
                             </select>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                         <label for="gender" class="col-md-3 col-form-label" style="margin-left: 0px;">Gender</label>
                         <div class="col-md-9">
                             <select name="gender" id="gender" style="border-radius: 5px">
-                                <option>{{$profile->gender}}</option>
+                                <option>{{@$profile->gender}}</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
@@ -34,7 +34,7 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-md-3 col-form-label">Age</label>
                         <div class="col-md-9">
-                            <input type="number" class="form-control" name="age" value="{{$profile->age}}" placeholder="Enter Age"/>
+                            <input type="number" class="form-control" name="age" value="{{@$profile->age}}" placeholder="Enter Age"/>
                             <span style="color: red">@error('age'){{$message}}@enderror</span>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-md-3 col-form-label">Occupation</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="occupation" value="{{$profile->occupation}}" placeholder="Enter Occupation">
+                            <input type="text" class="form-control" name="occupation" value="{{@$profile->occupation}}" placeholder="Enter Occupation">
                             <span style="color: red">@error('occupation'){{$message}}@enderror</span>
                         </div>
 
@@ -51,7 +51,7 @@
                     <div class="form-group row">
                         <label for="income" class="col-md-3 col-form-label">Monthly Income</label>
                         <div class="col-md-9">
-                            <input type="number" class="form-control" value="{{$profile->income}}" name="income" id="income" placeholder="Income">
+                            <input type="number" class="form-control" value="{{@$profile->income}}" name="income" id="income" placeholder="Income">
                             <span style="color: red">@error('income'){{$message}}@enderror</span>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-md-3 col-form-label">Home Address</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="address" value="{{$profile->address}}" placeholder="Address">
+                            <input type="text" class="form-control" name="address" value="{{@$profile->address}}" placeholder="Address">
                             <span style="color: red">@error('address'){{$message}}@enderror</span>
                         </div>
                     </div>
@@ -68,8 +68,10 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-md-3 col-form-label">Image</label>
                         <div class="col-md-9">
-                            <img src="{{asset($profile->image)}}" alt="" height="80" width="100" class="mt-3 text-left">
-                            <input type="file" class="form-control-file" value="" name="image" id="inputEmail3" accept="image/*">
+                            @foreach(@$profile->fileManager as $img)
+                                <img src="{{ @$img->url }}" class="img-thumbnail" style="width: 100px; padding: 5px" alt="img">
+                            @endforeach
+                            <input type="file" class="form-control-file" value="" name="edit_images[]" id="inputEmail3" accept="image/*">
                             <span style="color: red">@error('image'){{$message}}@enderror</span>
                         </div>
                     </div>

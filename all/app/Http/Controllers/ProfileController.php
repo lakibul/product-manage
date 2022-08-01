@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Models\FileManager;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 use PhpParser\Builder;
@@ -31,16 +32,38 @@ class ProfileController extends Controller
             'occupation' => 'required',
             'income' => 'required',
             'address' => 'required',
-            'image' => 'mimes:jpg,jpeg,png|required|max:1024',
+            'images' => 'required',
+            'images.*' => 'image|mimes:jpg,jpeg'
         ]);
-        Profile::newProfile($request);
+//        dd($request->all());
+        $profile = new Profile();
+        $profile->customer_id     = $request->customer_id;
+        $profile->gender     = $request->gender;
+        $profile->age    = $request->age;
+        $profile->occupation = $request->occupation;
+        $profile->income   = $request->income;
+        $profile->address  = $request->address;
+        $profile->save();
+        if ($request->hasfile('images')) {
+            foreach ($request->file('images') as $img) {
+
+                $file_manager = (new FileManager())->upload('profile_images', $img);
+                foreach ($file_manager as $item){
+                    if ($item->id != 0) {
+                        $item->origin()->associate($profile)->save();
+                    }
+                }
+
+            }
+        }
+//        Profile::newProfile($request);
         return redirect('/manage-customer')->with('message', 'Profile Added Successfully');
     }
 
     public function edit($id)
     {
-        $profile = Profile::with(['customer'])->find($id);
-        return view('dashboard.profile.edit')->with(['profile'=>$profile]);
+        $data['profile'] = Profile::with(['customer'])->find($id);
+        return view('dashboard.profile.edit', $data);
     }
 
     public function update(Request $request, $id)
@@ -50,10 +73,22 @@ class ProfileController extends Controller
             'occupation' => 'required',
             'income' => 'required',
             'address' => 'required',
-            'image' => 'mimes:jpg,jpeg,png|max:1024',
+            'images.*' => 'images|mimes:jpg,jpeg'
         ]);
-
-        Profile::updateProfile($request, $id);
+        $profile = Profile::find($id);
+        $profile->age = $request->age;
+        $profile->gender = $request->gender;
+        $profile->occupation = $request->occupation;
+        $profile->income = $request->income;
+        $profile->address = $request->address;
+        $profile->save();
+        if ($request->hasfile('edit_images')) {
+            $previous_images = @$profile->fileManager;
+            foreach ($request->file('edit_images') as $index =>$img) {
+                $previous_images[$index]->uploadUpdate('profile_images', $img);
+            }
+        }
+//        Profile::updateProfile($request, $id);
         return redirect()->route('customer.manage')->with('message', 'Profile Updated Successfully');
     }
 

@@ -11,8 +11,8 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $customers = Customer::paginate(5);
-        return view('dashboard.customer.index')->with(['customers'=>$customers]);
+        $data['customers'] = Customer::with('customerProfile')->paginate(5);
+        return view('dashboard.customer.index', $data);
     }
     public function searchProfile(Request $request)
     {
@@ -53,8 +53,8 @@ class CustomerController extends Controller
 
     public function edit($id)
     {
-        $customer = Customer::find($id);
-        return view('dashboard.customer.edit', compact('customer'));
+        $data['customer'] = Customer::find($id);
+        return view('dashboard.customer.edit', $data);
     }
 
     public function update(Request $request, $id)
@@ -82,14 +82,14 @@ class CustomerController extends Controller
 
     public function pagination(Request $request)
     {
-        $customers = Customer::paginate(4);
-        return view('dashboard.customer.pagination_products', compact('customers'))->render();
+        $data['customers'] = Customer::with('customerProfile')->paginate(4);
+        return view('dashboard.customer.pagination_products', $data)->render();
     }
 
     public function searchCustomer(Request $request)
     {
         $customers = Customer::Where('name', 'like', '%'.$request->search_string.'%')
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
             ->paginate(5);
         if ($customers->count() >= 1) {
             return view('dashboard.customer.pagination_products', compact('customers'))->render();

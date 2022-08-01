@@ -61,25 +61,6 @@ class ProfileApiController extends Controller
             return response()->json(['message'=>$message], 201);
     }
 
-//    public function updateProfile(Request $request, $id)
-//    {
-//        $profile = Profile::find($id);
-//        $profile->age    = isset($request->age) ? $request->age : $profile->age;
-//        $profile->occupation =  isset($request->occupation) ? $request->occupation : $profile->occupation;
-//        $profile->income   =  isset($request->income) ? $request->income : $profile->income;
-//        $profile->address  =  isset($request->address) ? $request->address : $profile->address;
-//        if ($request->image && $request->image->isValid())
-//        {
-//            $file_name = time().'.'.$request->image->extension();
-//            $request->image->move(public_path('image'),$file_name);
-//            $path = "public/profile-images/$file_name";
-//            $profile->image = $path;
-//        }
-//        $profile->save();
-//        $message = 'Profile Successfully Updated';
-//        return response()->json(['message'=>$message], 201);
-//    }
-
     public function updateProfile(Request $request, $id)
     {
         $found = Profile::find($id);

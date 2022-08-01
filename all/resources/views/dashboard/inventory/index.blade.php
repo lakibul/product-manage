@@ -27,27 +27,29 @@
                                 <th>Action</th>
                             </tr>
                             </thead>
-                            @foreach($inventories as $item)
-                                @if($item->status == 1)
+                            @foreach(@$inventories as $item)
+                                @if(@$item->status == 1)
                                 <tbody>
                                 <tr>
                                     <td scope="row">{{$loop->iteration}}</td>
-                                    <td>{{$item->products->name}}</td>
-                                    <td>{{$item->products->sku}}</td>
-                                    <td>{{$item->products->price}}</td>
+                                    <td>{{@$item->products->name}}</td>
+                                    <td>{{@$item->products->sku}}</td>
+                                    <td>{{@$item->products->price}}</td>
                                     <td>
-                                        <form method="post" action="{{route('unit.add', ['id'=>$item->id])}}">
+                                        <form method="post" action="{{route('unit.add', ['id'=>@$item->id])}}">
                                             @csrf
                                             <div class="input-counter">
                                                 <div class="" id="decrease" onclick="decreaseValue()" value="Decrease Value"><span class="minus-btn"><i class="bx bx-minus"></i></span></div>
-                                                <input type="text" name="unit" id="unit" value="{{$item->unit}}">
+                                                <input type="text" name="unit" id="unit" value="{{@$item->unit}}">
                                                 <div class="" id="increase" onclick="increaseValue()" value="Increase Value"><span class="plus-btn"><i class="bx bx-plus"></i></span></div>
                                             </div>
                                             <input type="submit" value="Submit" id="submit" class="btn btn-warning" style="margin-right: -150px;margin-top: -70px;">
                                         </form>
                                     </td>
-                                    <td><?php  $image = json_decode($item->products->image);?> <img src="{{ asset('product-images/'. $image[0]) }}" height="40" width="50" class=""> </td>
-
+                                    <td>
+                                        @foreach(@$item->products->fileManager as $img)
+                                            <img src="{{ $img->url[0] }}" height="40" width="50" alt=""/>
+                                    @endforeach
                                     <td>
                                         <a href="{{route('product.disable', ['id'=>$item->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-arrow-down"> Disable</i>
