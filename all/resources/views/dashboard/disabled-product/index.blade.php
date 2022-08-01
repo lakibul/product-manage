@@ -27,20 +27,24 @@
                                 <th>Action</th>
                             </tr>
                             </thead>
-                            @foreach($disabledProducts as $item)
+                            @foreach(@$disabledProducts as $item)
                                 <tbody>
                                 <tr>
-                                    <td scope="row">{{$loop->iteration}}</td>
-                                    <td>{{$item->product->name}}</td>
-                                    <td>{{$item->product->sku}}</td>
-                                    <td>{{$item->product->price}}</td>
-                                    <td><?php  $image = json_decode($item->product->image);?>
-                                        <img src="{{ asset('product-images/'. $image[0]) }}" height="40" width="50" class="">
-                                    </td>
-                                    <td>{{$item->inventory->unit}}</td>
-                                    <td>
-                                        <a href="{{route('disable.move', ['id'=>$item->id])}}" class="btn btn-outline-info"><i class="fa fa-truck-moving"> Move to Inventory</i></a>
-                                    </td>
+                                    @if(@$item->status == 0)
+                                        <td scope="row">{{@$loop->iteration}}</td>
+                                        <td>{{@$item->product->name}}</td>
+                                        <td>{{@$item->product->sku}}</td>
+                                        <td>{{@$item->product->price}}</td>
+                                        <td>
+                                            @foreach(@$item->product->fileManager as $img)
+                                                <img src="{{ $img->url[0] }}" height="40" width="50" alt=""/>
+                                            @endforeach
+                                        </td>
+                                        <td>{{@$item->inventory->unit}}</td>
+                                        <td>
+                                            <a href="{{route('disable.move', ['id'=>@$item->id])}}" class="btn btn-outline-info"><i class="fa fa-truck-moving"> Move to Inventory</i></a>
+                                        </td>
+                                    @endif
                                 </tr>
                                 </tbody>
                             @endforeach

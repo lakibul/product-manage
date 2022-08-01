@@ -25,19 +25,17 @@ class DisableProductController extends Controller
         ]);
         $inventory_product->status = 0;
         $inventory_product->save();
-        return back()->with('message', 'Product Disable Successfully');
+        return redirect('/disable-product-index')->with('message', 'Product Disable Successfully');
     }
 
     public function move($id)
     {
 
-        //Have to start From Here....
-
         $product = DisableProduct::find($id);
         $product->inventory->status = 1;
         $product->inventory->save();
 
-        $product->status = 0;
+        $product->status = 1;
         $product->save();
         return redirect('/inventory')->with('message', 'Product Moved to Inventory Successfully');
     }

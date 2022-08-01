@@ -63,7 +63,7 @@
                         <div class="form-group row">
                             <label for="image" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <input type="file" class="form-control-file" name="image[]" id="image" multiple>
+                                <input type="file" class="form-control-file" name="images[]" id="images" multiple>
                                 <span style="color: red">@error('image'){{$message}}@enderror</span>
                             </div>
                         </div>

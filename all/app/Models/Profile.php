@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Profile extends Model
 {
@@ -16,6 +17,16 @@ class Profile extends Model
     public function customer()
     {
         return $this->belongsTo(Customer::class, 'customer_id');
+    }
+
+    public function others(): MorphMany
+    {
+        return $this->morphMany(Other::class, 'origin');
+    }
+
+    public function fileManager(): MorphMany
+    {
+        return $this->morphMany(FileManager::class, 'origin');
     }
 
 

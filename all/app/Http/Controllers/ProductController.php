@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FileManager;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,15 +11,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::latest()->paginate(5);
-        return view('dashboard.product.manage')->with(['products' => $products]);
+        $data['products'] = Product::latest()->paginate(5);
+        return view('dashboard.product.manage', $data);
     }
 
     public function add()
     {
         return view('dashboard.product.add');
     }
-
 
     public function store(Request $request)
     {
@@ -28,10 +28,9 @@ class ProductController extends Controller
             'sku' => 'required',
             'short_description' => 'required',
             'price' => 'required',
-            'image' => 'required|max:1024',
-            'image.*' => 'image|max:1024'
+            'images' => 'required|max:1024',
+            'images.*' => 'image|max:1024'
         ]);
-
         $product = new Product();
         $product->admin_id = !empty(Auth::guard('admin')->user()) ? Auth::guard('admin')->user()->id : null;
         $product->merch_id = !empty(Auth::guard('merchant')->user()) ? Auth::guard('merchant')->user()->id : null;
@@ -40,24 +39,25 @@ class ProductController extends Controller
         $product->short_description   = $request->short_description;
         $product->long_description  = $request->long_description;
         $product->price  = $request->price;
-        if($request->hasfile('image'))
-        {
-            foreach($request->file('image') as $img)
-            {
-                $name=$img->getClientOriginalName();
-                $img->move(public_path().'/product-images/', $name);
-                $data[] = $name;
+        $product->save();
+        if ($request->hasfile('images')) {
+            foreach ($request->file('images') as $img) {
+
+                $file_manager = (new FileManager())->upload('product_images', $img);
+                foreach ($file_manager as $item){
+                    if ($item->id != 0) {
+                        $item->origin()->associate($product)->save();
+                    }
+                }
             }
         }
-        $product->image = json_encode($data);
-        $product->save();
         return redirect('/manage-product')->with('message', 'Product Added successfully');
     }
 
     public function edit($id)
     {
-        $product = Product::find($id);
-        return view('dashboard.product.edit')->with(['product' => $product]);
+        $data['product'] = Product::find($id);
+        return view('dashboard.product.edit', $data);
     }
 
     public function update(Request $request, $id)
@@ -68,11 +68,23 @@ class ProductController extends Controller
             'sku' => 'required',
             'short_description' => 'required',
             'price' => 'required',
-            'image' => 'mimes:jpg,jpeg,png|max:1024',
+            'images.*' => 'images|mimes:jpg,jpeg'
         ]);
-
-        Product::updateProduct($request, $id);
-        return redirect('/manage-product')->with('message', 'Product Added successfully');
+        $product = Product::find($id);
+        $product->name    = $request->name;
+        $product->sku = $request->sku;
+        $product->short_description   = $request->short_description;
+        $product->long_description  = $request->long_description;
+        $product->price  = $request->price;
+        $product->save();
+        if ($request->hasfile('edit_images')) {
+            $previous_images = @$product->fileManager;
+            foreach ($request->file('edit_images') as $index =>$img) {
+                $previous_images[$index]->uploadUpdate('product_images', $img);
+            }
+        }
+//        Product::updateProduct($request, $id);
+        return redirect('/manage-product')->with('message', 'Product Updated successfully');
     }
 
     public function delete($id)
@@ -83,7 +95,7 @@ class ProductController extends Controller
         }
         $this->product->delete();
 
-        return redirect('message', 'Profile Deleted Successfully');
+        return redirect()->back()->with('message', 'Profile Deleted Successfully');
     }
 
     public function searchProduct(Request $request)

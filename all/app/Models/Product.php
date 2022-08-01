@@ -4,11 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        "admin_id", "merch_id", "name", "sku", "short_description", "long_description", "price", "image",
+    ];
+
+    public function fileManager(): MorphMany
+    {
+        return $this->morphMany(FileManager::class, 'origin');
+    }
 
     private static $product;
     private static $image;

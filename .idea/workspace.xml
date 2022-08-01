@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="" />
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/all/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/Api/ProfileApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/Api/ProfileApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/public/profile-images/images (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/pagination_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/pagination_products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/disabled-product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/disabled-product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/inventory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/inventory/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/manage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,7 +181,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "last_opened_file_path": "C:/xampp/htdocs/product-manage"
+    "last_opened_file_path": "C:/xampp/htdocs/product-manage",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RunManager">

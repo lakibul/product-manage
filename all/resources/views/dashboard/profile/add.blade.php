@@ -66,7 +66,7 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Image</label>
                         <div class="col-sm-9">
-                            <input type="file" class="form-control-file" name="image" id="inputEmail3" placeholder="Enter Image" accept="image/*">
+                            <input type="file" class="form-control-file" name="images[]" id="inputEmail3" placeholder="Enter Image" multiple>
                             <span style="color: red">@error('image'){{$message}}@enderror</span>
                         </div>
                     </div>
