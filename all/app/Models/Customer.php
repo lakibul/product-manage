@@ -18,4 +18,14 @@ class Customer extends Model
     {
         return $this->hasOne(Profile::class, 'customer_id');
     }
+
+    public function adminLogs()
+    {
+        return $this->morphMany(AdminLogActivity::class, 'loggable');
+    }
+
+    public function merchantLogs()
+    {
+        return $this->morphMany(MerchantLogActivity::class, 'loggable');
+    }
 }

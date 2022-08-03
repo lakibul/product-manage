@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\AdminLogActivity;
+use App\Helpers\MerchantLogActivity;
 use App\Models\Customer;
 use App\Models\Profile;
 use Illuminate\Http\Request;
@@ -47,6 +49,36 @@ class CustomerController extends Controller
         $customer->name = $request->name;
         $customer->mobile = $request->mobile;
         $customer->save();
+
+        $customerLog = Customer::find($customer->id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('New Customer Created!', $customerLog, $request);
+        }
+        else{
+            MerchantLogActivity::addToLog('New Customer Created!', $customerLog, $request);
+        }
+
+//        $cuslog->adminLogs()->create([
+//
+//        ]);
+//        $cuslog->adminLogs()->create([
+//            'description' => 'Customer Created again!!',
+//        'url' => $request->fullUrl(),
+//        'method' => $request->method(),
+//        'agent' => $request->header('user-agent'),
+//        'admin_id' => !empty(Auth::guard('admin')->user()) ? Auth::guard('admin')->user()->id : null,
+//        ]);
+//        dd($cuslog);
+
+//        $adminLog = new \App\Models\AdminLogActivity();
+//        $adminLog->description = 'Customer Created again!!';
+//        $adminLog->url = $request->fullUrl();
+//        $adminLog->method = $request->method();
+//        $adminLog->agent = $request->header('user-agent');
+//        $adminLog->admin_id = !empty(Auth::guard('admin')->user()) ? Auth::guard('admin')->user()->id : null;
+//       $adminLog->save();
+
+
 
        return redirect('/manage-customer')->with('message', 'Customer Added Successfully');
     }
@@ -99,4 +131,6 @@ class CustomerController extends Controller
             ]);
         }
     }
+
+
 }
