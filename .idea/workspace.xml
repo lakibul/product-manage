@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/all/app/Helpers/AdminLogActivity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/app/Helpers/MerchantLogActivity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/app/Models/AdminLogActivity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/app/Models/MerchantLogActivity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/database/migrations/2022_08_03_092351_create_admin_log_activities_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/database/migrations/2022_08_03_092525_create_merchant_log_activities_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" afterDir="false" />
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Helpers/MerchantLogActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Helpers/MerchantLogActivity.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/master/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/master/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +16,6 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="lakibul &lt;lakibul.cse@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -180,8 +163,6 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/product-manage&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -190,32 +171,15 @@
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task id="LOCAL-00001" summary="initially finished for write user guide">
-      <created>1659348768315</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1659348768315</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml">
-      <created>1659354477032</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1659354477032</updated>
-    </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml" />
-      <created>1659356449636</created>
+      <changelist id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="" />
+      <created>1659545305745</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1659356449636</updated>
-      <workItem from="1659356455689" duration="834000" />
-      <workItem from="1659437035665" duration="209000" />
-      <workItem from="1659437788983" duration="752000" />
-      <workItem from="1659518588134" duration="12728000" />
+      <updated>1659545305745</updated>
+      <workItem from="1659545305746" duration="669000" />
+      <workItem from="1659546550461" duration="721000" />
     </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,8 +198,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initially finished for write user guide" />
-    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml" />
   </component>
 </project>

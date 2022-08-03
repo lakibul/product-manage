@@ -54,7 +54,7 @@ class CustomerController extends Controller
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('New Customer Created!', $customerLog, $request);
         }
-        else{
+        elseif(Auth::guard('merchant')->check()){
             MerchantLogActivity::addToLog('New Customer Created!', $customerLog, $request);
         }
 

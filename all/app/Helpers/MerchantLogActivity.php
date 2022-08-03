@@ -17,7 +17,7 @@ class MerchantLogActivity
             'url' => $request->fullUrl(),
             'method' => $request->method(),
             'agent' => $request->header('user-agent'),
-            'merch_id' => !empty(Auth::guard('merchant')->user()) ? Auth::guard('admin')->user()->id : null,
+            'merch_id' => !empty(Auth::guard('admin')->user()) ? Auth::guard('merchant')->user()->id : null,
         ]);
 //        $log = [];
 //        $log['description'] = $subject;
