@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\DisableProductController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ActivityLogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,11 @@ Route::get('/move-disable-product/{id}', [DisableProductController::class, 'move
 Route::get('/image-index', [ImageController::class, 'index'])->name('image.index');
 Route::post('/image-save', [ImageController::class, 'store'])->name('image.save');
 Route::post('/multiple-image', [ImageController::class, 'storeImages'])->name('image.multiple');
+
+//Activity Log
+Route::get('/merchant-log', [ActivityLogController::class, 'merchantLogActivity'])->name('log.merchant');
+Route::get('/admin-log', [ActivityLogController::class, 'adminLogActivity'])->name('log.admin');
+
 /*
 |--------------------------------------------------------------------------
 | Multi Authentication Routes

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\AdminLogActivity;
+use App\Helpers\MerchantLogActivity;
 use App\Models\Customer;
 use App\Models\Profile;
 use Illuminate\Http\Request;
@@ -11,7 +13,7 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $data['customers'] = Customer::with('customerProfile')->paginate(5);
+        $data['customers'] = Customer::with('customerProfile')->orderBy('id', 'desc')->paginate(5);
         return view('dashboard.customer.index', $data);
     }
     public function searchProfile(Request $request)
@@ -48,6 +50,14 @@ class CustomerController extends Controller
         $customer->mobile = $request->mobile;
         $customer->save();
 
+        $logInfo = Customer::findOrFail($customer->id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('New Customer Created!', $logInfo);
+        }
+        elseif(Auth::guard('merchant')->check()){
+            MerchantLogActivity::addToLog('New Customer Created!', $logInfo);
+        }
+
        return redirect('/manage-customer')->with('message', 'Customer Added Successfully');
     }
 
@@ -70,12 +80,29 @@ class CustomerController extends Controller
         $customer->mobile = $request->mobile;
         $customer->save();
 
+        $logInfo = Customer::findOrFail($id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Customer Updated!', $logInfo);
+        }
+        elseif(Auth::guard('merchant')->check()){
+            MerchantLogActivity::addToLog('Customer Updated!', $logInfo);
+        }
+
         return redirect('/manage-customer')->with('message', 'Customer updated successfully');
     }
 
     public function delete($id)
     {
         $customer = Customer::find($id);
+
+        $logInfo = Customer::findOrFail($id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Customer Deleted!', $logInfo);
+        }
+        elseif(Auth::guard('merchant')->check()){
+            MerchantLogActivity::addToLog('Customer Deleted!', $logInfo);
+        }
+
         $customer->delete();
         return back()->with('message', 'Customer Deleted');
     }
@@ -99,4 +126,6 @@ class CustomerController extends Controller
             ]);
         }
     }
+
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\MerchantLogActivity;
 use App\Models\DisableProduct;
 use App\Models\Inventory;
 use Illuminate\Http\Request;
@@ -25,6 +26,12 @@ class DisableProductController extends Controller
         ]);
         $inventory_product->status = 0;
         $inventory_product->save();
+
+        $logInfo = Inventory::findOrFail($inventory_product->id);
+        if (Auth::guard('merchant')->check()) {
+            MerchantLogActivity::addToLog('Product Disabled from Inventory!', $logInfo);
+        }
+
         return redirect('/disable-product-index')->with('message', 'Product Disable Successfully');
     }
 
@@ -37,6 +44,12 @@ class DisableProductController extends Controller
 
         $product->status = 1;
         $product->save();
+
+        $logInfo = DisableProduct::findOrFail($product->id);
+        if (Auth::guard('merchant')->check()) {
+            MerchantLogActivity::addToLog('Product Enabled Again!', $logInfo);
+        }
+
         return redirect('/inventory')->with('message', 'Product Moved to Inventory Successfully');
     }
 

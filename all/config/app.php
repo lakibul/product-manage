@@ -58,7 +58,7 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
-    'storage_driver' => env('STORAGE_DRIVER', 'storage'),
+    'storage_driver' => env('STORAGE_DRIVER', 'public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Dhaka',
 
     /*
     |--------------------------------------------------------------------------

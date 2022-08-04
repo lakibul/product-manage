@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\AdminLogActivity;
 use App\Models\FileManager;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -51,6 +52,12 @@ class ProductController extends Controller
                 }
             }
         }
+
+        $logInfo = Product::findOrFail($product->id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('New Product Created!', $logInfo);
+        }
+
         return redirect('/manage-product')->with('message', 'Product Added successfully');
     }
 
@@ -83,7 +90,12 @@ class ProductController extends Controller
                 $previous_images[$index]->uploadUpdate('product_images', $img);
             }
         }
-//        Product::updateProduct($request, $id);
+
+        $logInfo = Product::findOrFail($product->id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Product Updated!', $logInfo);
+        }
+
         return redirect('/manage-product')->with('message', 'Product Updated successfully');
     }
 
@@ -93,6 +105,12 @@ class ProductController extends Controller
         if (file_exists($this->product->image)) {
             unlink($this->product->image);
         }
+
+        $logInfo = Product::findOrFail($id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Product deleted!', $logInfo);
+        }
+
         $this->product->delete();
 
         return redirect()->back()->with('message', 'Profile Deleted Successfully');

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('/')}}css/favicon.ico">
     <!-- DataTables -->
@@ -15,6 +15,7 @@
 {{--    <link href="{{asset('/')}}admin/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />--}}
 <!-- Bootstrap Css -->
     <link href="{{asset('/')}}css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />--}}
 {{--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">--}}
     <!-- Icons Css -->
     <link href="{{asset('/')}}css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -169,14 +170,30 @@
                                 <span>Disable Product</span>
                             </a>
                         </li>
+
+                        <li>
+                            <a href="{{route('log.merchant')}}" class="waves-effect">
+                                <i class="bx bx-briefcase-alt-2"></i>
+                                <span>Activity Log</span>
+                            </a>
+                        </li>
                     @endif
 
-                    <li>
-                        <a href="{{route('image.index')}}" class="waves-effect">
-                            <i class="bx bx-briefcase-alt-2"></i>
-                            <span>Image Manipulation</span>
-                        </a>
-                    </li>
+                    @if(Auth::guard('admin')->check())
+                        <li>
+                            <a href="{{route('log.admin')}}" class="waves-effect">
+                                <i class="bx bx-briefcase-alt-2"></i>
+                                <span>Activity Log</span>
+                            </a>
+                        </li>
+                    @endif
+
+{{--                    <li>--}}
+{{--                        <a href="{{route('image.index')}}" class="waves-effect">--}}
+{{--                            <i class="bx bx-briefcase-alt-2"></i>--}}
+{{--                            <span>Image Manipulation</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                 </ul>
             </div>
             <!-- Sidebar -->

@@ -14,4 +14,14 @@ class Inventory extends Model
     {
         return $this->belongsTo(Product::class, 'product_id');
     }
+
+    public function adminLogs()
+    {
+        return $this->morphMany(AdminLogActivity::class, 'loggable');
+    }
+
+    public function merchantLogs()
+    {
+        return $this->morphMany(MerchantLogActivity::class, 'loggable');
+    }
 }

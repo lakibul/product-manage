@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\MerchantLogActivity;
 use App\Models\Inventory;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ class InventoryController extends Controller
 {
     public function index()
     {
-        $data['inventories'] = Inventory::with('products')->get();
+        $data['inventories'] = Inventory::with('products')->latest()->get();
         return view('dashboard.inventory.index', $data);
     }
 
@@ -24,6 +25,12 @@ class InventoryController extends Controller
         ]);
         $product->status = 0;
         $product->save();
+
+        $logInfo = Product::findOrFail($product->id);
+        if (Auth::guard('merchant')->check()) {
+            MerchantLogActivity::addToLog('Product Added to Inventory!', $logInfo);
+        }
+
         return back()->with('message', 'Product Added to Inventory successfully');
     }
 
@@ -32,11 +39,15 @@ class InventoryController extends Controller
         $request->validate([
            'unit' => 'required'
         ]);
-//        dd($request->all());
-        $inventory = Inventory::find($id);
 
+        $inventory = Inventory::find($id);
         $inventory->unit = $request->unit;
         $inventory->save();
-        return back()->with('message', 'Product Quantity added successfully');
+
+        $logInfo = Inventory::findOrFail($inventory->id);
+        if (Auth::guard('merchant')->check()) {
+            MerchantLogActivity::addToLog('Product Unit Added!', $logInfo);
+        }
+        return redirect()->back()->with('message', 'Product Quantity added successfully');
     }
 }
