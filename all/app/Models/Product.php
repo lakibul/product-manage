@@ -19,6 +19,16 @@ class Product extends Model
         return $this->morphMany(FileManager::class, 'origin');
     }
 
+    public function adminLogs()
+    {
+        return $this->morphMany(AdminLogActivity::class, 'loggable');
+    }
+
+    public function merchantLogs()
+    {
+        return $this->morphMany(MerchantLogActivity::class, 'loggable');
+    }
+
     private static $product;
     private static $image;
     private static $imageName;

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\AdminLogActivity;
+use App\Helpers\MerchantLogActivity;
 use App\Models\Customer;
 use App\Models\FileManager;
 use App\Models\Profile;
 use Illuminate\Http\Request;
-use PhpParser\Builder;
-use function GuzzleHttp\Promise\all;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProfileController extends Controller
 {
@@ -35,7 +37,7 @@ class ProfileController extends Controller
             'images' => 'required',
             'images.*' => 'image|mimes:jpg,jpeg'
         ]);
-//        dd($request->all());
+
         $profile = new Profile();
         $profile->customer_id     = $request->customer_id;
         $profile->gender     = $request->gender;
@@ -56,7 +58,14 @@ class ProfileController extends Controller
 
             }
         }
-//        Profile::newProfile($request);
+        $logInfo = Profile::findOrFail($profile->id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Customer Profile Created!', $logInfo);
+        }
+        elseif(Auth::guard('merchant')->check()){
+            MerchantLogActivity::addToLog('Customer Profile Created!', $logInfo);
+        }
+
         return redirect('/manage-customer')->with('message', 'Profile Added Successfully');
     }
 
@@ -88,7 +97,15 @@ class ProfileController extends Controller
                 $previous_images[$index]->uploadUpdate('profile_images', $img);
             }
         }
-//        Profile::updateProfile($request, $id);
+
+        $logInfo = Profile::findOrFail($profile->id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Customer Profile Updated!', $logInfo);
+        }
+        elseif(Auth::guard('merchant')->check()){
+            MerchantLogActivity::addToLog('Customer Profile Updated!', $logInfo);
+        }
+
         return redirect()->route('customer.manage')->with('message', 'Profile Updated Successfully');
     }
 
@@ -99,6 +116,15 @@ class ProfileController extends Controller
         {
             unlink($this->profile->image);
         }
+
+        $logInfo = Profile::findOrFail($id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Customer Profile Deleted!', $logInfo);
+        }
+        elseif(Auth::guard('merchant')->check()){
+            MerchantLogActivity::addToLog('Customer Profile Deleted!', $logInfo);
+        }
+
         $this->profile->delete();
 
         return redirect('/manage-customer')->with('message', 'Profile Deleted Successfully');

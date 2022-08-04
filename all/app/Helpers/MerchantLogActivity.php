@@ -10,23 +10,15 @@ use App\Models\MerchantLogActivity as MerchantLogActivityModel;
 class MerchantLogActivity
 {
 
-    public static function addToLog($subject, $customerLog, $request)
+    public static function addToLog($subject, $logInfo)
     {
-        $customerLog->adminLogs()->create([
+        $logInfo->merchantLogs()->updateOrCreate([
             'description' => $subject,
-            'url' => $request->fullUrl(),
-            'method' => $request->method(),
-            'agent' => $request->header('user-agent'),
-            'merch_id' => !empty(Auth::guard('admin')->user()) ? Auth::guard('merchant')->user()->id : null,
+            'url' => Request::fullUrl(),
+            'method' => Request::method(),
+            'agent' => Request::header('user-agent'),
+            'merch_id' => Auth::guard('merchant')->user()->id,
         ]);
-//        $log = [];
-//        $log['description'] = $subject;
-//        $log['url'] = Request::fullUrl();
-//        $log['method'] = Request::method();
-//        $log['agent'] = Request::header('user-agent');
-//        $log['user_id'] = !empty(Auth::guard('admin')->user()) ? Auth::guard('admin')->user()->id : null;
-//        AdminLogActivityModel::create($log);
-
     }
 
 

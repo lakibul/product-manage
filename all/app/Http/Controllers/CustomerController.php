@@ -13,7 +13,7 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $data['customers'] = Customer::with('customerProfile')->paginate(5);
+        $data['customers'] = Customer::with('customerProfile')->orderBy('id', 'desc')->paginate(5);
         return view('dashboard.customer.index', $data);
     }
     public function searchProfile(Request $request)
@@ -50,35 +50,13 @@ class CustomerController extends Controller
         $customer->mobile = $request->mobile;
         $customer->save();
 
-        $customerLog = Customer::find($customer->id);
+        $logInfo = Customer::findOrFail($customer->id);
         if (Auth::guard('admin')->check()){
-            AdminLogActivity::addToLog('New Customer Created!', $customerLog, $request);
+            AdminLogActivity::addToLog('New Customer Created!', $logInfo);
         }
         elseif(Auth::guard('merchant')->check()){
-            MerchantLogActivity::addToLog('New Customer Created!', $customerLog, $request);
+            MerchantLogActivity::addToLog('New Customer Created!', $logInfo);
         }
-
-//        $cuslog->adminLogs()->create([
-//
-//        ]);
-//        $cuslog->adminLogs()->create([
-//            'description' => 'Customer Created again!!',
-//        'url' => $request->fullUrl(),
-//        'method' => $request->method(),
-//        'agent' => $request->header('user-agent'),
-//        'admin_id' => !empty(Auth::guard('admin')->user()) ? Auth::guard('admin')->user()->id : null,
-//        ]);
-//        dd($cuslog);
-
-//        $adminLog = new \App\Models\AdminLogActivity();
-//        $adminLog->description = 'Customer Created again!!';
-//        $adminLog->url = $request->fullUrl();
-//        $adminLog->method = $request->method();
-//        $adminLog->agent = $request->header('user-agent');
-//        $adminLog->admin_id = !empty(Auth::guard('admin')->user()) ? Auth::guard('admin')->user()->id : null;
-//       $adminLog->save();
-
-
 
        return redirect('/manage-customer')->with('message', 'Customer Added Successfully');
     }
@@ -102,12 +80,29 @@ class CustomerController extends Controller
         $customer->mobile = $request->mobile;
         $customer->save();
 
+        $logInfo = Customer::findOrFail($id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Customer Updated!', $logInfo);
+        }
+        elseif(Auth::guard('merchant')->check()){
+            MerchantLogActivity::addToLog('Customer Updated!', $logInfo);
+        }
+
         return redirect('/manage-customer')->with('message', 'Customer updated successfully');
     }
 
     public function delete($id)
     {
         $customer = Customer::find($id);
+
+        $logInfo = Customer::findOrFail($id);
+        if (Auth::guard('admin')->check()){
+            AdminLogActivity::addToLog('Customer Deleted!', $logInfo);
+        }
+        elseif(Auth::guard('merchant')->check()){
+            MerchantLogActivity::addToLog('Customer Deleted!', $logInfo);
+        }
+
         $customer->delete();
         return back()->with('message', 'Customer Deleted');
     }
