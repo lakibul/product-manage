@@ -125,13 +125,14 @@
         </div>
         <br>
 
-        <table class="table table-bordered">
-            <tr>
-                <th>No</th>
-                <th>Description</th>
-                <th width="400px">URL</th>
-                <th>Action Time</th>
-            </tr>
+        <div class="card">
+            <table class="table table-bordered">
+                <tr>
+                    <th>No</th>
+                    <th>Description</th>
+                    <th width="400px">URL</th>
+                    <th>Action Time</th>
+                </tr>
                 @foreach(@$logs as $key => $log)
                     <tr>
                         <td>{{ ++$key }}</td>
@@ -146,7 +147,9 @@
                         <td>{{ @$log->created_at->diffForHumans() }} <br/> {{ @$log->created_at }}</td>
                     </tr>
                 @endforeach
-        </table>
+            </table>
+        </div>
+
     </div>
 
 @endsection

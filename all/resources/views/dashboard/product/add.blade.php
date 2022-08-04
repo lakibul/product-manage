@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="card-body">
+                <div class="card">
                     <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data" style="width: 80%">
                         @csrf
                         <div class="form-group row col-md-12">
