@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="Initially Activity Log reviewed with Atiq vai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Helpers/AdminLogActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Helpers/AdminLogActivity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Helpers/MerchantLogActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Helpers/MerchantLogActivity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/InventoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Models/DisableProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/DisableProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Models/Inventory.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Inventory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Models/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" afterDir="false" />
     </list>
@@ -32,6 +20,11 @@
       <list>
         <option value="lakibul &lt;lakibul.cse@gmail.com&gt;" />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
