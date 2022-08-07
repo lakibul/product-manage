@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="Log filter start">
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="card transform">
+      <change afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant_filter.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Models/MerchantLogActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/MerchantLogActivity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,6 +212,7 @@
       <workItem from="1659437035665" duration="209000" />
       <workItem from="1659437788983" duration="752000" />
       <workItem from="1659518588134" duration="12728000" />
+      <workItem from="1659847517479" duration="22293000" />
     </task>
     <task id="LOCAL-00003" summary="Log filter start">
       <created>1659615477212</created>
@@ -218,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659615477212</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="card transform">
+      <created>1659617430737</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659617430737</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +250,7 @@
     <MESSAGE value="initially finished for write user guide" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Log filter start" />
-    <option name="LAST_COMMIT_MESSAGE" value="Log filter start" />
+    <MESSAGE value="card transform" />
+    <option name="LAST_COMMIT_MESSAGE" value="card transform" />
   </component>
 </project>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Laravel\Passport\HasApiTokens;
 
 class Customer extends Model
@@ -13,6 +14,8 @@ class Customer extends Model
     protected $fillable = [
         "admin_id", "merch_id", "name", "mobile"
     ];
+
+
 
     public function customerProfile()
     {

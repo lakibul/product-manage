@@ -11,6 +11,7 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\DisableProductController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ActivityLogController;
+use App\Http\Controllers\LogFilterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,14 @@ Route::post('/multiple-image', [ImageController::class, 'storeImages'])->name('i
 //Activity Log
 Route::get('/merchant-log', [ActivityLogController::class, 'merchantLogActivity'])->name('log.merchant');
 Route::get('/admin-log', [ActivityLogController::class, 'adminLogActivity'])->name('log.admin');
+
+//activity_log_filtering
+Route::post('/customer-filter', [LogFilterController::class, 'customer'])->name('filter.customer');
+Route::post('/profile-filter', [LogFilterController::class, 'profile'])->name('filter.profile');
+Route::post('/product-filter', [LogFilterController::class, 'product'])->name('filter.product');
+Route::post('/inventory-filter', [LogFilterController::class, 'inventory'])->name('filter.inventory');
+Route::post('/disable-product-filter', [LogFilterController::class, 'disableProduct'])->name('filter.add-inventory');
+
 
 /*
 |--------------------------------------------------------------------------
