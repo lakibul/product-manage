@@ -276,26 +276,87 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin::Menu wrapper-->
                             <div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
                                 <!--begin::Menu-->
-                                <div class="d-flex">
-                                    <span class="menu-bullet">
-                                        <span class="bullet-dot"></span>
-                                    </span>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="dropdown d-inline-block">
-                                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: -90px;">
-                                            <span class="d-none d-xl-inline-block ml-1">{{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}</span>
 
-                                        </button>
+                                <!--begin::Activities-->
+                                <div class="d-flex align-items-center ms-1 ms-lg-2">
+                                    <!--begin::Drawer toggle-->
+                                    <div class="btn btn-icon btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px" id="kt_activities_toggle">
+                                        <!--begin::Svg Icon | path: icons/duotune/general/gen032.svg-->
+                                        <span class="svg-icon svg-icon-1">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<rect x="8" y="9" width="3" height="10" rx="1.5" fill="currentColor" />
+												<rect opacity="0.5" x="13" y="5" width="3" height="14" rx="1.5" fill="currentColor" />
+												<rect x="18" y="11" width="3" height="8" rx="1.5" fill="currentColor" />
+												<rect x="3" y="13" width="3" height="6" rx="1.5" fill="currentColor" />
+											</svg>
+										</span>
+                                        <!--end::Svg Icon-->
                                     </div>
-                                    <div>
-                                        <a class="dropdown-item text-danger" style="margin-top: 30px;" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
-                                        <form action="{{route('logout')}}" method="POST" id="logoutForm">
-                                            @csrf
-                                        </form>
+                                    <!--end::Drawer toggle-->
+                                </div>
+                                <!--end::Activities-->
+                                <!--begin::Chat-->
+                                <div class="d-flex align-items-center ms-1 ms-lg-2">
+                                    <!--begin::Menu wrapper-->
+                                    <div class="btn btn-icon btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px position-relative" id="kt_drawer_chat_toggle">
+                                        <!--begin::Svg Icon | path: icons/duotune/communication/com012.svg-->
+                                        <span class="svg-icon svg-icon-1">
+											<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path opacity="0.3" d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z" fill="currentColor" />
+												<rect x="6" y="12" width="7" height="2" rx="1" fill="currentColor" />
+												<rect x="6" y="7" width="12" height="2" rx="1" fill="currentColor" />
+											</svg>
+										</span>
+                                        <!--end::Svg Icon-->
+                                        <span class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink"></span>
+                                    </div>
+                                    <!--end::Menu wrapper-->
+                                </div>
+                                <!--end::Chat-->
+
+                                <!--Start Notifications-->
+                                <div class="d-flex align-items-center ms-1 ms-lg-2">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="fas fa-bell"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Another action </a>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--End Notifications-->
+
+                                <div class="d-flex align-items-center ms-1 ms-lg-2">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                            <span class="d-none d-xl-inline-block ml-1">{{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}</span>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item text-danger" style="margin-top: 10px;" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
+                                            <form action="{{route('logout')}}" method="POST" id="logoutForm">
+                                                @csrf
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+{{--                                <div class="d-flex">--}}
+{{--                                    <div class="dropdown d-inline-block">--}}
+{{--                                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"--}}
+{{--                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: -90px;">--}}
+{{--                                            <span class="d-none d-xl-inline-block ml-1">{{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}</span>--}}
+
+{{--                                        </button>--}}
+{{--                                    </div>--}}
+{{--                                    <div>--}}
+{{--                                        <a class="dropdown-item text-danger" style="margin-top: 30px;" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>--}}
+{{--                                        <form action="{{route('logout')}}" method="POST" id="logoutForm">--}}
+{{--                                            @csrf--}}
+{{--                                        </form>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <!--end::Menu-->
                             </div>
 {{--                            <!--end::Menu wrapper-->--}}

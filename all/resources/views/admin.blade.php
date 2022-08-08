@@ -5,10 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8" style="margin-top: 50px;">
                 <div class="card">
-                    <div class="card-header">ADMIN PANEL</div>
+                    <div class="card-header"><h1>ADMIN PANEL</h1></div>
 
                     <div class="card-body">
-                        Hi boss!
+                        <h3>Hi boss!</h3>
                     </div>
                 </div>
             </div>

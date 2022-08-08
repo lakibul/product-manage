@@ -2,34 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="received">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_3_2022_10_28_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_3_2022_10_28_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_7_2022_11_15_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_7_2022_11_15_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_5_59_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_5_59_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/congrats.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/fav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/food.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/happy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/index-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/index.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/sneakers.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/soccer.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/socks.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/tailwindcss.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/user.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/user1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/user2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/img/user3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/public/assets/media/logos/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/public/assets/media/logos/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant_filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant_filter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/master/admin2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/master/admin2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/merchant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/merchant.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,17 +173,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/product-manage&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/xampp/htdocs/product-manage/all/public/assets/media/logos",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\product-manage\all\public\assets\media\logos" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="initially finished for write user guide">
@@ -248,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659617430737</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="received">
+      <created>1659964926098</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659964926099</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

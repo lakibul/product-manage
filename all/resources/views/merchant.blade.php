@@ -4,10 +4,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8" style="margin-top: 50px;">
                 <div class="card">
-                    <div class="card-header">MERCHANT PANEL</div>
+                    <div class="card-header"><h1>MERCHANT PANEL</h1></div>
 
                     <div class="card-body">
-                        Hi there, awesome Merchant
+                        <h3>Hi there, awesome Merchant</h3>
                     </div>
                 </div>
             </div>
