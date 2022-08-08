@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin2')
 @section('content')
     <div class="container">
         <div class="row">
@@ -9,7 +9,7 @@
                 <br/>
                 <p class="text-center text-success">{{Session::get('message')}}</p>
                 <div class="card">
-                    <form action="{{route('product.update', ['id'=>@$product->id])}}" method="post" enctype="multipart/form-data" style="width: 80%">
+                    <form action="{{route('product.update', ['id'=>@$product->id])}}" method="post" enctype="multipart/form-data" style="padding: 35px">
                         @csrf
 
                         <div class="form-group row">

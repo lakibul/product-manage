@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin2')
 @section('content')
     <div class="container">
         <div class="row">
@@ -9,12 +9,12 @@
                 <br/>
                 <p class="text-center text-success">{{Session::get('message')}}</p>
                 <div class="card">
-                    <form action="{{route('profile.store')}}" method="post" enctype="multipart/form-data" style="width: 50%;">
+                    <form action="{{route('profile.store')}}" method="post" enctype="multipart/form-data" style="padding: 35px;">
                         @csrf
                         <div class="form-group row">
                             <label for="customer_id" class="col-md-3 col-form-label" style="margin-left: 0px;">Name</label>
                             <div class="col-md-9" >
-                                <select name="customer_id" id="customer_id" style="background-color: blanchedalmond;">
+                                <select class="form-select min-w-150px me-3" name="customer_id" id="customer_id" style="background-color: blanchedalmond;">
                                     <option value="{{$customer->id}}">{{$customer->name}}</option>
                                 </select>
                             </div>
@@ -23,7 +23,7 @@
                         <div class="form-group row">
                             <label for="gender" class="col-md-3 col-form-label">Gender</label>
                             <div class="col-md-9">
-                                <select name="gender" id="gender">
+                                <select class="form-select min-w-150px me-3" name="gender" id="gender">
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                 </select>

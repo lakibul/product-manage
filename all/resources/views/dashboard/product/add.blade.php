@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin2')
 @section('content')
     <div class="container">
         <div class="row">
@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data" style="width: 80%">
+                    <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data" style="padding: 35px">
                         @csrf
                         <div class="form-group row col-md-12">
                             <label for="name" class="col-md-3 col-form-label">Name</label>

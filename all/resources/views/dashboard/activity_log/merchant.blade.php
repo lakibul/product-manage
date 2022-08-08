@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin2')
 @section('content')
 
     <div class="container">
@@ -44,7 +44,6 @@
                                 <option value="hide">-- Inventory Info --</option>
                                 <option value="1">Added Product</option>
                                 <option value="2">Added Unit</option>
-                                <option value="3">Removed Product</option>
                             </select>
                         </div>
                         <button type="submit" class="btn-sm btn-outline-success search-btn">Show</button>
@@ -58,7 +57,8 @@
                         <div class="select">
                             <select class="form-select min-w-150px me-3" data-allow-clear="true" name="value">
                                 <option value="hide">-- Disable Product --</option>
-                                <option value="1">View All</option>
+                                <option value="1">Product Added</option>
+                                <option value="1">Product Removed</option>
                             </select>
                         </div>
                         <button type="submit" class="btn-sm btn-outline-success search-btn">Show</button>
@@ -85,101 +85,10 @@
             </div>
         </div>
     </div>
-
-{{--            <div class="row">--}}
-{{--                <div class="col-md-2">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div>--}}
-{{--                            <div class="dropdown">--}}
-{{--                                <button class="dropbtn block">Customer Info</button>--}}
-{{--                                <div class="dropdown-content">--}}
-{{--                                    <a href="{{route('new.customer')}}">New Added</a>--}}
-{{--                                    <a href="{{route('updated.customer')}}">Updated</a>--}}
-{{--                                    <a href="{{route('delete.customer')}}">Deleted</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-2">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div>--}}
-{{--                            <div class="dropdown">--}}
-{{--                                <button class="dropbtn block">Customer Profile Info</button>--}}
-{{--                                <div class="dropdown-content">--}}
-{{--                                    <a href="#">Created Profile</a>--}}
-{{--                                    <a href="#">Updated Profile</a>--}}
-{{--                                    <a href="#">Deleted Profile</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-2">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div>--}}
-{{--                            <div class="dropdown">--}}
-{{--                                <button class="dropbtn block">Product Index Info</button>--}}
-{{--                                <div class="dropdown-content">--}}
-{{--                                    <a href="#">Created Product</a>--}}
-{{--                                    <a href="#">Updated Product</a>--}}
-{{--                                    <a href="#">Deleted Product</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-2">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div>--}}
-{{--                            <div class="dropdown">--}}
-{{--                                <button class="dropbtn block">Inventory Info</button>--}}
-{{--                                <div class="dropdown-content">--}}
-{{--                                    <a href="#">Added Product</a>--}}
-{{--                                    <a href="#">Removed Product</a>--}}
-{{--                                    <a href="#">Added Unit</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-md-2">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div>--}}
-{{--                            <div class="dropdown">--}}
-{{--                                <button class="dropbtn">Disabled Product Info</button>--}}
-{{--                                <div class="dropdown-content">--}}
-{{--                                    <a href="#">Show Product</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-
-{{--                <div class="card-header pb-3">--}}
-{{--                    <form class="d-flex align-items-center justify-content-start flex-wrap" action="{{route('log.merchant')}}">--}}
-{{--                        <div class="mobile-w-100 me-0 me-sm-3 mb-3">--}}
-{{--                            <input type="search" class="form-control me-3" placeholder="Added Customer" name="newCustomer" value="{{app('request')->newCustomer}}" disabled>--}}
-{{--                        </div>--}}
-{{--                        <div class="mobile-w-100 me-0 me-sm-3 mb-3">--}}
-{{--                            <input type="search" class="form-control me-3" placeholder="সংগঠনের নাম" name="name" value="{{app('request')->name}}">--}}
-{{--                        </div>--}}
-
-{{--                        <div class="mobile-w-100 me-0 me-sm-3 mb-3">--}}
-{{--                            <button type="submit" class="btn-create border-0 h-100">খুঁজুন</button>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-
 <br>
 
-        <div class="card">
+    <div class="container">
+        <div class="card" style="padding: 20px">
             <table class="table table-bordered">
                 <tr>
                     <th>No</th>
@@ -211,4 +120,6 @@
                 @endforeach
             </table>
         </div>
+    </div>
+
 @endsection

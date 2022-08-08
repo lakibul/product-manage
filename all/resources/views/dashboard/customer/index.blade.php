@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin2')
 @section('content')
     <style>
         .search-btn{
@@ -7,7 +7,7 @@
     </style>
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h2 class="section-title mb-0">Customer</h2>
+            <h2 class="section-title mb-0">Customers</h2>
             <div class="text-right">
                 <a href="{{route('customer.add')}}" class="btn btn-warning">Add Customer</a>
             </div>
@@ -15,7 +15,7 @@
         <div class="card-header pb-3">
             <div class="col-md-4">
                 <div class="card-body">
-                    <form action="{{route('customer.profile')}}" method="post" class="d-flex justify-content-start align-items-center" style="margin-top: -80px;">
+                    <form action="{{route('customer.profile')}}" method="post" class="d-flex justify-content-start align-items-center">
                         @csrf
                         <div>
                             <select class="form-select min-w-150px me-3" data-allow-clear="true" name="value">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="padding: 30px;">
                 <input type="text" name="search" id="search" placeholder="Search here..." class="form-control">
                 <div class="card">
                     <p class="text-center text-success mt-3">{{Session::get('message')}}</p>

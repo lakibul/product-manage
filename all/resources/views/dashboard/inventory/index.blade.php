@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin2')
 @section('content')
 
     <div class="col-md-12">
@@ -22,7 +22,7 @@
                                 <th>Name</th>
                                 <th>SKU Number</th>
                                 <th>Price</th>
-                                <th style="text-align: center;">Unit</th>
+                                <th>Unit</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -43,7 +43,7 @@
                                                 <input type="text" name="unit" id="unit" value="{{@$item->unit}}">
                                                 <div class="" id="increase" onclick="increaseValue()" value="Increase Value"><span class="plus-btn"><i class="bx bx-plus"></i></span></div>
                                             </div>
-                                            <input type="submit" value="Submit" id="submit" class="btn btn-warning" style="margin-right: -150px;margin-top: -70px;">
+                                            <input type="submit" value="Submit" id="submit" class="btn btn-sm btn-warning">
                                         </form>
                                     </td>
                                     <td>

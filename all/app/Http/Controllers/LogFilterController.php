@@ -89,6 +89,20 @@ class LogFilterController extends Controller
         }
     }
 
-
+    public function disableProduct(Request $request)
+    {
+        if ($request->value == 1){
+            $data['logs'] = MerchantLogActivity::query();
+            $data['logs'] = $data['logs']->where('description', 'Product Disabled from Inventory!');
+            $data['logs'] = $data['logs']->latest()->get();
+            return view('dashboard.activity_log.merchant_filter', $data);
+        }
+        else{
+            $data['logs'] = MerchantLogActivity::query();
+            $data['logs'] = $data['logs']->where('description', 'Product Enabled Again!');
+            $data['logs'] = $data['logs']->latest()->get();
+            return view('dashboard.activity_log.merchant_filter', $data);
+        }
+    }
 
 }

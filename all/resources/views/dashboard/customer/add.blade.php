@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin2')
 @section('content')
     <div class="container">
         <div class="row">
@@ -10,10 +10,10 @@
                     <p class="text-center text-success">{{Session::get('message')}}</p>
                     <div class="card">
                         <div class="col-md-12">
-                            <form action="{{route('customer.store')}}" method="post" style="width: 50%">
+                            <form action="{{route('customer.store')}}" method="post" style="padding: 35px">
                                 @csrf
                                 <div class="form-group row">
-                                    <label for="name" class="col-md-4">Name</label>
+                                    <label for="name" class="col-md-3 col-form-label">Name</label>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name">
                                         @error('name')
@@ -23,7 +23,7 @@
                                 </div>
                                 <br/>
                                 <div class="form-group row">
-                                    <label for="mobile" class="col-md-4">Phone Number</label>
+                                    <label for="mobile" class="col-md-3 col-form-label">Phone Number</label>
                                     <div class="col-md-8">
                                         <input type="number" class="form-control" name="mobile" id="mobile" placeholder="Phone Number">
                                         @error('mobile')
@@ -35,7 +35,7 @@
                                 <div class="form-group row justify-content-end">
                                     <div class="col-md-8">
                                         <div>
-                                            <button type="submit" class="professional-button">Create</button>
+                                            <button type="submit" class="btn btn-primary">Create</button>
                                         </div>
                                     </div>
                                 </div>
