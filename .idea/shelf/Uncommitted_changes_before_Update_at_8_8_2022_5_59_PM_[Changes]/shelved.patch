@@ -1,0 +1,137 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"6a80bf7e-01bf-4969-b872-2d7d0708e561\" name=\"Changes\" comment=\"card transform\">\r\n      <change afterPath=\"$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant_filter.blade.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/all/app/Models/Customer.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/all/app/Models/Customer.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/all/app/Models/MerchantLogActivity.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/all/app/Models/MerchantLogActivity.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/all/resources/views/dashboard/customer/add.blade.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/all/resources/views/dashboard/customer/add.blade.php\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/all/routes/web.php\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/all/routes/web.php\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\">\r\n    <pharConfigPath>$PROJECT_DIR$/all/composer.json</pharConfigPath>\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\r\n      <list>\r\n        <option value=\"lakibul &lt;lakibul.cse@gmail.com&gt;\" />\r\n      </list>\r\n    </option>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/all/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/psr/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/psr/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/psr/http-factory\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/psr/http-message\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/psr/simple-cache\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/psy/psysh\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/filp/whoops\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/voku/portable-ascii\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/brick/math\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/nette/schema\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/nette/utils\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/defuse/php-encryption\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/facade/ignition-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/league/commonmark\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/league/config\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/league/event\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/league/flysystem\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/league/mime-type-detection\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/league/oauth2-server\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/league/uri\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/league/uri-interfaces\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/nesbot/carbon\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/nyholm/psr7\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/ramsey/collection\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/ramsey/uuid\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/spatie/backtrace\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/spatie/flare-client-php\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/spatie/ignition\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/spatie/laravel-ignition\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/vlucas/phpdotenv\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/dflydev/dot-access-data\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/laravel/framework\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/laravel/passport\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/laravel/sail\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/laravel/sanctum\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/laravel/serializable-closure\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/laravel/tinker\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/laravel/ui\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/mockery/mockery\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/myclabs/deep-copy\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phar-io/manifest\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phar-io/version\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpspec/prophecy\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpunit/php-code-coverage\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpunit/php-file-iterator\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpunit/php-invoker\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpunit/php-text-template\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpunit/php-timer\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpunit/phpunit\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/mailer\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/polyfill-ctype\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/polyfill-intl-grapheme\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/polyfill-php81\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/psr-http-message-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/string\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/theseer/tokenizer\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/fakerphp/faker\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/firebase/php-jwt\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/hamcrest/hamcrest-php\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/lcobucci/clock\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/lcobucci/jwt\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/php-http/message-factory\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/fruitcake/php-cors\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/paragonie/constant_time_encoding\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/paragonie/random_compat\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpoption/phpoption\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpseclib/phpseclib\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/ralouphie/getallheaders\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/cli-parser\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/code-unit\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/code-unit-reverse-lookup\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/comparator\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/complexity\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/diff\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/environment\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/exporter\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/global-state\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/lines-of-code\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/object-enumerator\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/object-reflector\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/recursion-context\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/resource-operations\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/type\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/sebastian/version\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/guzzlehttp/guzzle\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/guzzlehttp/promises\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/guzzlehttp/psr7\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/nunomaduro/collision\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/intervention/image\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/stella-maris/clock\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/tijsverkoyen/css-to-inline-styles\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/dragonmantank/cron-expression\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpdocumentor/reflection-common\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpdocumentor/reflection-docblock\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/phpdocumentor/type-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/all/vendor/graham-campbell/result-type\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2CiLDCBZ8A4F7FFHibfZqxnI3UQ\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/product-manage&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task id=\"LOCAL-00001\" summary=\"initially finished for write user guide\">\r\n      <created>1659348768315</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659348768315</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml\">\r\n      <created>1659354477032</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659354477032</updated>\r\n    </task>\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"6a80bf7e-01bf-4969-b872-2d7d0708e561\" name=\"Changes\" comment=\"Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml\" />\r\n      <created>1659356449636</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1659356449636</updated>\r\n      <workItem from=\"1659356455689\" duration=\"834000\" />\r\n      <workItem from=\"1659437035665\" duration=\"209000\" />\r\n      <workItem from=\"1659437788983\" duration=\"752000\" />\r\n      <workItem from=\"1659518588134\" duration=\"12728000\" />\r\n      <workItem from=\"1659847517479\" duration=\"22293000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Log filter start\">\r\n      <created>1659615477212</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659615477212</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"card transform\">\r\n      <created>1659617430737</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1659617430737</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"initially finished for write user guide\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml\" />\r\n    <MESSAGE value=\"Log filter start\" />\r\n    <MESSAGE value=\"card transform\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"card transform\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dea5543fd748fb51a4cf1d40fe0fa187af628f12)
++++ b/.idea/workspace.xml	(date 1659898067869)
+@@ -1,15 +1,8 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="card transform">
+-      <change afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant_filter.blade.php" afterDir="false" />
++    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="merchant done">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ActivityLogController.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/all/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Customer.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/all/app/Models/MerchantLogActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/MerchantLogActivity.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/add.blade.php" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/all/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/routes/web.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,16 +14,6 @@
+     <execution />
+   </component>
+   <component name="Git.Settings">
+-    <option name="PREVIOUS_COMMIT_AUTHORS">
+-      <list>
+-        <option value="lakibul &lt;lakibul.cse@gmail.com&gt;" />
+-      </list>
+-    </option>
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
+-      </map>
+-    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -175,60 +158,32 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/product-manage&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+-  }
+-}</component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ASKED_ADD_EXTERNAL_FILES": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "C:/xampp/htdocs/product-manage/all/resources/views/master",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
++  <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\xampp\htdocs\product-manage\all\resources\views\master" />
++      <recent name="C:\xampp\htdocs\product-manage\all\public\assets" />
++    </key>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+-    <task id="LOCAL-00001" summary="initially finished for write user guide">
+-      <created>1659348768315</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1659348768315</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml">
+-      <created>1659354477032</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1659354477032</updated>
+-    </task>
+     <task active="true" id="Default" summary="Default task">
+-      <changelist id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml" />
+-      <created>1659356449636</created>
++      <changelist id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="" />
++      <created>1659545305745</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+-      <updated>1659356449636</updated>
+-      <workItem from="1659356455689" duration="834000" />
+-      <workItem from="1659437035665" duration="209000" />
+-      <workItem from="1659437788983" duration="752000" />
+-      <workItem from="1659518588134" duration="12728000" />
+-      <workItem from="1659847517479" duration="22293000" />
++      <updated>1659545305745</updated>
++      <workItem from="1659545305746" duration="669000" />
++      <workItem from="1659546550461" duration="721000" />
+     </task>
+-    <task id="LOCAL-00003" summary="Log filter start">
+-      <created>1659615477212</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1659615477212</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="card transform">
+-      <created>1659617430737</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1659617430737</updated>
+-    </task>
+-    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -247,10 +202,5 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+-    <MESSAGE value="initially finished for write user guide" />
+-    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/php.xml&#10;#&#9;.idea/workspace.xml" />
+-    <MESSAGE value="Log filter start" />
+-    <MESSAGE value="card transform" />
+-    <option name="LAST_COMMIT_MESSAGE" value="card transform" />
+   </component>
+ </project>
+\ No newline at end of file
