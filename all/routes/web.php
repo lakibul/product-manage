@@ -25,6 +25,10 @@ use App\Http\Controllers\LogFilterController;
 */
 
 Route::get('/', [FrontController::class, 'index']);
+Route::get('mark-as-read', function (){
+    Auth::guard('merchant')->user()->unreadNotifications->markAsRead();
+    return redirect()->back();
+})->name('mark.read');
 
 //customer
 Route::get('/manage-customer', [CustomerController::class, 'index'])->name('customer.manage');
@@ -83,7 +87,7 @@ Route::post('/customer-filter', [LogFilterController::class, 'customer'])->name(
 Route::post('/profile-filter', [LogFilterController::class, 'profile'])->name('filter.profile');
 Route::post('/product-filter', [LogFilterController::class, 'product'])->name('filter.product');
 Route::post('/inventory-filter', [LogFilterController::class, 'inventory'])->name('filter.inventory');
-Route::post('/disable-product-filter', [LogFilterController::class, 'disableProduct'])->name('filter.add-inventory');
+Route::post('/disable-product-filter', [LogFilterController::class, 'disableProduct'])->name('filter.disable-product');
 
 
 /*

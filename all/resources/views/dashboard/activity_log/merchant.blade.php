@@ -52,13 +52,13 @@
                 @endif
 
                 <div class="col-md-3">
-                    <form action="{{route('filter.add-inventory')}}" method="post">
+                    <form action="{{route('filter.disable-product')}}" method="post">
                         @csrf
                         <div class="select">
                             <select class="form-select min-w-150px me-3" data-allow-clear="true" name="value">
                                 <option value="" disabled selected>-- Disable Product --</option>
-                                <option value="1">Product Added</option>
-                                <option value="1">Product Removed</option>
+                                <option value="1">Disabled Product</option>
+                                <option value="2">Enabled Again</option>
                             </select>
                         </div>
                         <button type="submit" class="btn-sm btn-outline-success" style="margin-top: 5px;">Show</button>

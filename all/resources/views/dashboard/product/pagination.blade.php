@@ -21,17 +21,22 @@
             <td>{{$item->status == 1 ? 'Added' : 'Not Added'}}</td>
             <td>
                 @if(Auth::guard('admin')->check())
-                    <a href="{{route('product.edit', ['id'=>$item->id])}}" class="btn btn-success btn-sm">
+                    <a href="{{route('product.edit', ['id'=>@$item->id])}}" class="btn btn-success btn-sm">
                         <i class="fa fa-edit"> Edit</i>
                     </a>
-                    <a href="{{route('product.delete', ['id'=>$item->id])}}" class="btn btn-danger btn-sm">
+                    <a href="{{route('product.delete', ['id'=>@$item->id])}}" class="btn btn-danger btn-sm">
                         <i class="fa fa-trash"> Delete</i>
                     </a>
                 @elseif(Auth::guard('merchant')->check())
-                    @if($item->status == 1)
-                        <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-success">Active</a>
+                    {{--                                            @if($item->status == 1)--}}
+                    {{--                                                <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-success">Active</a>--}}
+                    {{--                                            @else--}}
+                    {{--                                               <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-danger">Inactive</a>--}}
+                    {{--                                            @endif--}}
+                    @if(@$item->status == 1)
+                        <a href="{{route('inventory.add', ['id'=>@$item->id])}}" class="btn btn-warning"><i class="fa fa-plus"> Add to Inventory</i></a>
                     @else
-                        <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-danger">Inactive</a>
+                        <div class="btn btn-success"><i class="fa fa-arrow-up"> Added</i></div>
                     @endif
                 @endif
             </td>

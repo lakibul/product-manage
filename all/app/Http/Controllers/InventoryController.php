@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\MerchantLogActivity;
+use App\Mail\NotifyMail;
 use App\Models\Inventory;
+use App\Models\Merchant;
 use App\Models\Product;
+use App\Notifications\TaskCompleted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\EmailNotification;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 
 class InventoryController extends Controller
 {
@@ -25,6 +31,17 @@ class InventoryController extends Controller
         ]);
         $product->status = 0;
         $product->save();
+
+        //        start email notification
+        $details = [
+            'title' => 'Mail from ParallaxLogic',
+            'body' => 'A Product added to Inventory',
+        ];
+        $user = Merchant::find(1);
+        Mail::to($user)->send(new NotifyMail($details, $product, null, null));
+        $user->notify(new TaskCompleted($product));
+//        Notification::send($user, new EmailNotification());
+//        end email notification
 
         $logInfo = Product::findOrFail($product->id);
         if (Auth::guard('merchant')->check()) {

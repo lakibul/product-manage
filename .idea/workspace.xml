@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="received">
-      <change afterPath="$PROJECT_DIR$/all/public/assets/media/logos/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/all/public/assets/media/logos/logo.png" afterDir="false" />
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="new admin">
+      <change afterPath="$PROJECT_DIR$/all/app/Mail/NotifyMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/app/Notifications/EmailNotification.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/app/Notifications/TaskCompleted.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/database/migrations/2022_08_09_124858_create_notifications_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/public/email/images/image-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/public/email/images/image-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/public/email/images/image-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/public/email/images/image-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/all/resources/views/emails/notify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_3_2022_10_28_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_3_2022_10_28_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_7_2022_11_15_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_7_2022_11_15_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_5_59_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_5_59_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/InventoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant_filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/activity_log/merchant_filter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/pagination.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/pagination.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/resources/views/master/admin2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/master/admin2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/merchant.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/merchant.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,14 +195,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/xampp/htdocs/product-manage/all/public/assets/media/logos",
+    "last_opened_file_path": "C:/xampp/htdocs/product-manage/all/public/email",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\product-manage\all\public\assets\media\logos" />
+      <recent name="C:\xampp\htdocs\product-manage\all\public\email" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -216,6 +232,7 @@
       <workItem from="1659437788983" duration="752000" />
       <workItem from="1659518588134" duration="12728000" />
       <workItem from="1659847517479" duration="22293000" />
+      <workItem from="1660018757292" duration="25196000" />
     </task>
     <task id="LOCAL-00003" summary="Log filter start">
       <created>1659615477212</created>
@@ -231,14 +248,7 @@
       <option name="project" value="LOCAL" />
       <updated>1659617430737</updated>
     </task>
-    <task id="LOCAL-00005" summary="received">
-      <created>1659964926098</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1659964926099</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

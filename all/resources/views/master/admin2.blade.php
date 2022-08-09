@@ -28,6 +28,8 @@ License: For each use you must have a valid license purchased only from above li
     <link href="{{asset('/')}}assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('/')}}assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" crossorigin="anonymous"/>
+
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -295,6 +297,7 @@ License: For each use you must have a valid license purchased only from above li
                                     <!--end::Drawer toggle-->
                                 </div>
                                 <!--end::Activities-->
+
                                 <!--begin::Chat-->
                                 <div class="d-flex align-items-center ms-1 ms-lg-2">
                                     <!--begin::Menu wrapper-->
@@ -315,48 +318,44 @@ License: For each use you must have a valid license purchased only from above li
                                 <!--end::Chat-->
 
                                 <!--Start Notifications-->
+                                @if(Auth::guard('merchant')->check())
                                 <div class="d-flex align-items-center ms-1 ms-lg-2">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                    <li class="dropdown" style="list-style-type: none">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                             <i class="fas fa-bell"></i>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Another action </a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
+                                            @if(Auth::guard('merchant')->user()->unreadNotifications->count())
+                                                <span class="badge badge-light">{{Auth::guard('merchant')->user()->unreadNotifications->count()}}</span>
+                                            @endif
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" style="color: green" href="{{ route('mark.read') }}">Mark all as Read</a></li>
+                                            @foreach(Auth::guard('merchant')->user()->unreadNotifications as $notify)
+                                                <li><a style="background-color: #7abaff" class="dropdown-item" href="#">{{$notify->data['data']}}</a></li>
+                                            @endforeach
+                                            @foreach(Auth::guard('merchant')->user()->readNotifications as $notify)
+                                                <li><a class="dropdown-item" href="#">{{$notify->data['data']}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
                                 </div>
-                                <!--End Notifications-->
+                                @endif
+                                <!--end Notifications-->
 
-                                <div class="d-flex align-items-center ms-1 ms-lg-2">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                <div class="d-flex">
+                                    <div class="dropdown d-inline-block">
+                                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: -90px;">
                                             <span class="d-none d-xl-inline-block ml-1">{{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}</span>
+
                                         </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item text-danger" style="margin-top: 10px;" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
-                                            <form action="{{route('logout')}}" method="POST" id="logoutForm">
-                                                @csrf
-                                            </form>
-                                        </div>
+                                    </div>
+                                    <div>
+                                        <a class="dropdown-item text-danger" style="margin-top: 30px;" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
+                                        <form action="{{route('logout')}}" method="POST" id="logoutForm">
+                                            @csrf
+                                        </form>
                                     </div>
                                 </div>
-
-{{--                                <div class="d-flex">--}}
-{{--                                    <div class="dropdown d-inline-block">--}}
-{{--                                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"--}}
-{{--                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right: -90px;">--}}
-{{--                                            <span class="d-none d-xl-inline-block ml-1">{{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}</span>--}}
-
-{{--                                        </button>--}}
-{{--                                    </div>--}}
-{{--                                    <div>--}}
-{{--                                        <a class="dropdown-item text-danger" style="margin-top: 30px;" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>--}}
-{{--                                        <form action="{{route('logout')}}" method="POST" id="logoutForm">--}}
-{{--                                            @csrf--}}
-{{--                                        </form>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                                 <!--end::Menu-->
                             </div>
 {{--                            <!--end::Menu wrapper-->--}}
@@ -447,6 +446,7 @@ License: For each use you must have a valid license purchased only from above li
 <script src="{{asset('/')}}assets/js/custom/utilities/modals/upgrade-plan.js"></script>
 <script src="{{asset('/')}}assets/js/custom/utilities/modals/create-app.js"></script>
 <script src="{{asset('/')}}assets/js/custom/utilities/modals/users-search.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=></script>
 
 </body>
 <!--end::Body-->
