@@ -27,7 +27,6 @@
                     <a href="{{route('customer.add')}}" class="btn btn-info">Add New Customer</a>
                 </div>
             </div>
-
         </div>
         <div class="card-body">
             <div class="row">

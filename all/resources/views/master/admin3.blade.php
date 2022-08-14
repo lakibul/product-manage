@@ -111,11 +111,6 @@
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-                    <i class="fas fa-th-large"></i>
-                </a>
-            </li>
         </ul>
     </nav>
     <!-- /.navbar -->
@@ -154,7 +149,7 @@
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-chart-pie"></i>
+                            <i class="nav-icon fas fa-user-alt"></i>
                             <p>
                                 Customer Module
                                 <i class="right fas fa-angle-left"></i>
@@ -171,7 +166,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tree"></i>
+                            <i class="nav-icon fab fa-product-hunt"></i>
                             <p>
                                 Product Module
                                 <i class="fas fa-angle-left right"></i>
@@ -189,7 +184,7 @@
                     @if(Auth::guard('merchant')->check())
                         <li class="nav-item">
                             <a href="{{route('inventory.index')}}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon fa fa-archive"></i>
                                 <p>
                                     Inventory
                                 </p>
@@ -198,7 +193,7 @@
 
                         <li class="nav-item">
                             <a href="{{route('disable.index')}}" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
+                                <i class="nav-icon fa fa-ban"></i>
                                 <p>
                                     Disable Product
                                 </p>
@@ -206,7 +201,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{route('log.merchant')}}" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
+                                <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
                                     Activity Log
                                 </p>
@@ -217,7 +212,7 @@
                     @if(Auth::guard('admin')->check())
                         <li class="nav-item">
                             <a href="{{route('log.admin')}}" class="nav-link">
-                                <i class="nav-icon fas fa-columns"></i>
+                                <i class="nav-icon fas ffa-calendar-alt"></i>
                                 <p>
                                     Activity Log
                                 </p>
@@ -306,7 +301,7 @@
 <!-- AdminLTE App -->
 <script src="{{asset('/')}}admin3/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('/')}}admin3/dist/js/demo.js"></script>
+{{--<script src="{{asset('/')}}admin3/dist/js/demo.js"></script>--}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('/')}}admin3/dist/js/pages/dashboard.js"></script>
 </body>

@@ -84,9 +84,8 @@
                     </div>
                 @endif
             </div>
-        </div>
-        <div class="container">
-            <div class="card" style="padding: 20px">
+
+            <div class="card-body" style="padding: 20px">
                 <table class="table table-bordered">
                     <tr>
                         <th>No</th>

@@ -3,7 +3,7 @@
 
     <div class="card card-success">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h2 class="card-title">Admin Activity Lists</h2>
+            <h2 class="card-title">Merchant Activity Lists</h2>
         </div>
         <div class="card-body">
             <div class="row">
@@ -84,9 +84,8 @@
                     </div>
                 @endif
             </div>
-        </div>
-        <div class="container">
-            <div class="card" style="padding: 20px">
+
+            <div class="card-body" style="padding: 20px">
                 <table class="table table-bordered">
                     <tr>
                         <th>No</th>
