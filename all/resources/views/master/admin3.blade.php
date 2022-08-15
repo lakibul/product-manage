@@ -95,7 +95,11 @@
             <li class="nav-item dropdown">
                 <div class="dropdown">
                     <button class="btn btn-white dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}
+                        @if(Auth::guard('admin')->check() || Auth::guard('merchant')->check())
+                            {{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}
+                        @else
+                            <a href="{{url('/login/admin')}}"></a>
+                        @endif
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
@@ -138,7 +142,11 @@
                     <img src="{{asset('/')}}admin3/dist/img/logo1.png" class="img-circle elevation-2" alt="">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">{{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}</a>
+                    @if(Auth::guard('admin')->check() || Auth::guard('merchant')->check())
+                        <a href="#" class="d-block">{{Auth::guard('admin')->check() ? Auth::guard('admin')->user()->name : Auth::guard('merchant')->user()->name}}</a>
+                    @else
+                        <a href="{{url('/login/admin')}}"></a>
+                    @endif
                 </div>
             </div>
 
