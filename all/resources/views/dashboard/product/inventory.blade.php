@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin3')
 @section('content')
     <div class="row">
         <div class="col-12">

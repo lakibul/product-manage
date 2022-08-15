@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\AdminLogActivity;
 use App\Models\MerchantLogActivity;
-use Illuminate\Http\Request;
 
 class ActivityLogController extends Controller
 {

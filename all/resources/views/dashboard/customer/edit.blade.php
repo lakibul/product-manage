@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin3')
 @section('content')
     <div class="container">
         <div class="row">
@@ -8,7 +8,7 @@
                 <hr/>
                 <br/>
                 <p class="text-center text-success">{{Session::get('message')}}</p>
-                <form action="{{route('customer.update', ['id'=>@$customer->id])}}" method="post" style="width: 50%">
+                <form action="{{route('customer.update', ['id'=>@$customer->id])}}" method="post" style="padding: 35px">
                     @csrf
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-md-3 col-form-label">Enter Your Name</label>

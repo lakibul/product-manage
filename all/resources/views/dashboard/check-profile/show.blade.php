@@ -1,4 +1,4 @@
-@extends('master.admin')
+@extends('master.admin3')
 @section('content')
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">

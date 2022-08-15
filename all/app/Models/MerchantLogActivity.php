@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class MerchantLogActivity extends Model
 {
@@ -12,6 +14,12 @@ class MerchantLogActivity extends Model
     protected $fillable = [
         'description', 'url', 'method', 'agent', 'merch_id'
     ];
+
+
+    public function origin(): MorphTo
+    {
+        return $this->morphTo();
+    }
 
     public function loggable()
     {
