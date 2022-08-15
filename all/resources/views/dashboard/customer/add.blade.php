@@ -1,13 +1,13 @@
 @extends('master.admin3')
 @section('content')
     <div class="card card-info">
-        <div class="card-header d-flex justify-content-between align-items-center">
+        <div class="card-header">
             <h2 class="card-title">Add New Customer</h2>
         </div>
         <p class="text-center text-success">{{Session::get('message')}}</p>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-12   ">
+                <div class="col-md-12">
                     <div class="card-body">
                         <div class="card">
                             <div class="col-md-12">
