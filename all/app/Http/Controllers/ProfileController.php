@@ -21,7 +21,7 @@ class ProfileController extends Controller
 
     public function index($id)
     {
-        $data['person'] = Customer::with('customerProfile')->get()->find($id);
+        $data['person'] = Customer::find($id);
         return view('dashboard.profile.manage', $data);
     }
 
@@ -34,10 +34,9 @@ class ProfileController extends Controller
             'occupation' => 'required',
             'income' => 'required',
             'address' => 'required',
-            'images' => 'required',
-            'images.*' => 'image|mimes:jpg,jpeg'
+            'images' => 'required|max:1024',
+            'images.*' => 'image|max:1024'
         ]);
-
         $profile = new Profile();
         $profile->customer_id     = $request->customer_id;
         $profile->gender     = $request->gender;

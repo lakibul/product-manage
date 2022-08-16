@@ -13,7 +13,7 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $data['customers'] = Customer::with('customerProfile')->orderBy('id', 'desc')->paginate(5);
+        $data['customers'] = Customer::latest()->paginate(5);
         return view('dashboard.customer.index', $data);
     }
     public function searchProfile(Request $request)

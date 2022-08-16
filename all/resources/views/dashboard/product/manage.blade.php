@@ -40,7 +40,7 @@
                             <td>{{@$item->price}}</td>
                             <td>
                                 @foreach(@$item->fileManager as $img)
-                                    <img src="{{ $img->url[0] }}" height="40" width="50" alt=""/>
+                                    <img src="{{ @$img->file_url }}" height="40" width="50" alt=""/>
                                 @endforeach
                             </td>
                             <td>{{@$item->status == 1 ? 'Not Added' : 'Added'}}</td>
@@ -48,11 +48,11 @@
                                 @if(Auth::guard('admin')->check())
                                     <a href="{{route('product.edit', ['id'=>@$item->id])}}"
                                        class="btn btn-success btn-sm">
-                                        <i class="fa fa-edit"> Edit</i>
+                                        <i class="fa fa-edit"></i>
                                     </a>
                                     <a href="{{route('product.delete', ['id'=>@$item->id])}}"
                                        class="btn btn-danger btn-sm">
-                                        <i class="fa fa-trash"> Delete</i>
+                                        <i class="fa fa-trash"></i>
                                     </a>
                                 @elseif(Auth::guard('merchant')->check())
                                     {{--                                            @if($item->status == 1)--}}
