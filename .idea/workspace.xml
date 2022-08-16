@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="image view problem fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/InventoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Notifications/TaskCompleted.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Notifications/TaskCompleted.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/check-profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/check-profile/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/pagination_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/pagination_products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/disabled-product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/disabled-product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/inventory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/inventory/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/manage.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/pagination.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/pagination.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="code commented" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -268,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660638700098</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="code commented">
+      <created>1660646893109</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660646893109</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +290,7 @@
     <MESSAGE value="junk restored" />
     <MESSAGE value="new admin panel theme installed" />
     <MESSAGE value="image view problem fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="image view problem fixed" />
+    <MESSAGE value="code commented" />
+    <option name="LAST_COMMIT_MESSAGE" value="code commented" />
   </component>
 </project>
