@@ -1,7 +1,7 @@
 @extends('master.admin3')
 @section('content')
 
-    <div class="card card-primary">
+    <div class="card card-warning">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h2 class="card-title">Disabled Product</h2>
         </div>
@@ -39,12 +39,12 @@
                                                 <td>{{@$item->product->price}}</td>
                                                 <td>
                                                     @foreach(@$item->product->fileManager as $img)
-                                                        <img src="{{ $img->url[0] }}" height="40" width="50" alt=""/>
+                                                        <img src="{{ $img->file_url }}" height="40" width="50" alt=""/>
                                                     @endforeach
                                                 </td>
                                                 <td>{{@$item->inventory->unit}}</td>
                                                 <td>
-                                                    <a href="{{route('disable.move', ['id'=>@$item->id])}}" class="btn btn-outline-info"><i class="fa fa-truck-moving"> Move to Inventory</i></a>
+                                                    <a href="{{route('disable.move', ['id'=>@$item->id])}}" class="btn btn-info"><i class="fa fa-exchange-alt"></i> Move to Inventory</a>
                                                 </td>
                                             @endif
                                         </tr>

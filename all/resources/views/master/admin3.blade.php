@@ -236,20 +236,10 @@
 
 {{--    <!-- Content Wrapper. Contains page content -->--}}
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-
-        <!-- /.content-header -->
-
         <!-- Main content -->
-        <section class="content">
-
-            <div class="content-cell">
-                <div class="container-fluid">
-                    @yield('content')
-                </div>
-            </div>
-
-        </section>
+        <div class="container">
+            @yield('content')
+        </div>
         <!-- /.content -->
     </div>
 {{--    <!-- /.content-wrapper -->--}}

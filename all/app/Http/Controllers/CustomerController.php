@@ -13,7 +13,7 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $data['customers'] = Customer::with('customerProfile')->orderBy('id', 'desc')->paginate(5);
+        $data['customers'] = Customer::latest()->paginate(5);
         return view('dashboard.customer.index', $data);
     }
     public function searchProfile(Request $request)
@@ -50,6 +50,7 @@ class CustomerController extends Controller
         $customer->mobile = $request->mobile;
         $customer->save();
 
+        // activity log Start
         $logInfo = Customer::findOrFail($customer->id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('New Customer Created!', $logInfo);
@@ -57,6 +58,7 @@ class CustomerController extends Controller
         elseif(Auth::guard('merchant')->check()){
             MerchantLogActivity::addToLog('New Customer Created!', $logInfo);
         }
+        // activity log end
 
        return redirect('/manage-customer')->with('message', 'Customer Added Successfully');
     }
@@ -80,6 +82,7 @@ class CustomerController extends Controller
         $customer->mobile = $request->mobile;
         $customer->save();
 
+        // activity log Start
         $logInfo = Customer::findOrFail($id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('Customer Updated!', $logInfo);
@@ -87,6 +90,7 @@ class CustomerController extends Controller
         elseif(Auth::guard('merchant')->check()){
             MerchantLogActivity::addToLog('Customer Updated!', $logInfo);
         }
+        // activity log end
 
         return redirect('/manage-customer')->with('message', 'Customer updated successfully');
     }
@@ -95,6 +99,7 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($id);
 
+        // activity log Start
         $logInfo = Customer::findOrFail($id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('Customer Deleted!', $logInfo);
@@ -102,6 +107,7 @@ class CustomerController extends Controller
         elseif(Auth::guard('merchant')->check()){
             MerchantLogActivity::addToLog('Customer Deleted!', $logInfo);
         }
+        // activity log end
 
         $customer->delete();
         return back()->with('message', 'Customer Deleted');
@@ -109,14 +115,14 @@ class CustomerController extends Controller
 
     public function pagination(Request $request)
     {
-        $data['customers'] = Customer::with('customerProfile')->paginate(4);
+        $data['customers'] = Customer::latest()->paginate(5);
         return view('dashboard.customer.pagination_products', $data)->render();
     }
 
     public function searchCustomer(Request $request)
     {
         $customers = Customer::Where('name', 'like', '%'.$request->search_string.'%')
-            ->orderBy('id', 'asc')
+            ->orderBy('id', 'desc')
             ->paginate(5);
         if ($customers->count() >= 1) {
             return view('dashboard.customer.pagination_products', compact('customers'))->render();

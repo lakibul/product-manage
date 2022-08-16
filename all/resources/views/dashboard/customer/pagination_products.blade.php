@@ -25,31 +25,31 @@
             <td>
                 <a href="{{route('customer.edit', ['id' => @$customer->id])}}"
                    class="btn btn-secondary btn-sm ">
-                    <i class="fa fa-edit"> Edit</i>
+                    <i class="fa fa-edit"></i> Edit
                 </a>
                 <a href="{{route('customer.delete', ['id' => @$customer->id])}}"
                    class="btn btn-danger btn-sm">
-                    <i class="fa fa-trash"> Remove</i>
+                    <i class="fa fa-trash"></i> Remove
                 </a>
             </td>
             <td>
                 @if(!isset($customer->customerProfile->id))
                     <a href="{{route('profile.add', ['id' => @$customer->id])}}"
                        class="btn btn-info btn-sm icon">
-                        <i class="fa fa-plus"> Add</i>
+                        <i class="fa fa-plus-circle"></i> Add
                     </a>
                 @else
                     <a href="" class="btn btn-success btn-sm icon">
-                        <i class="fa fa-check-circle"> Added</i>
+                        <i class="fa fa-check-circle"></i> Added
                     </a>
                 @endif
                     @if(!isset($customer->customerProfile->id))
                         <a href="" class="btn btn-danger btn-sm icon">
-                            <i class="fa fa-ban"> No Profile</i>
+                            <i class="fa fa-ban"></i> No Profile
                         </a>
                     @else
                         <a href="{{route('profile.manage', ['id' => @$customer->id])}}" class="btn btn-primary btn-sm icon">
-                            <i class="fa fa-fill"> Manage</i>
+                            <i class="fa fa-tasks"></i> Manage
                         </a>
                     @endif
             </td>

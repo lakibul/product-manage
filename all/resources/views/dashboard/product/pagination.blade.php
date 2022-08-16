@@ -17,26 +17,26 @@
             <td>{{$item->name}}</td>
             <td>{{$item->sku}}</td>
             <td>{{$item->price}}</td>
-            <td><img src="{{asset($item->image)}}" height="40" width="50" alt=""/></td>
-            <td>{{$item->status == 1 ? 'Added' : 'Not Added'}}</td>
+            <td>
+                @foreach(@$item->fileManager as $img)
+                    <img src="{{ @$img->file_url }}" height="40" width="50" alt=""/>
+                @endforeach
+            </td>
+            <td>{{$item->status == 1 ? 'Not Added' : 'Added'}}</td>
             <td>
                 @if(Auth::guard('admin')->check())
                     <a href="{{route('product.edit', ['id'=>@$item->id])}}" class="btn btn-success btn-sm">
-                        <i class="fa fa-edit"> Edit</i>
+                        <i class="fa fa-edit"></i>
                     </a>
                     <a href="{{route('product.delete', ['id'=>@$item->id])}}" class="btn btn-danger btn-sm">
-                        <i class="fa fa-trash"> Delete</i>
+                        <i class="fa fa-trash"></i>
                     </a>
                 @elseif(Auth::guard('merchant')->check())
-                    {{--                                            @if($item->status == 1)--}}
-                    {{--                                                <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-success">Active</a>--}}
-                    {{--                                            @else--}}
-                    {{--                                               <a href="{{route('status.update', ['id'=>$item->id])}}" class="btn btn-sm btn-danger">Inactive</a>--}}
-                    {{--                                            @endif--}}
                     @if(@$item->status == 1)
-                        <a href="{{route('inventory.add', ['id'=>@$item->id])}}" class="btn btn-warning"><i class="fa fa-plus"> Add to Inventory</i></a>
+                        <a href="{{route('inventory.add', ['id'=>@$item->id])}}"
+                           class="btn btn-warning"><i class="fa fa-plus-circle"></i>  Add to Inventory</a>
                     @else
-                        <div class="btn btn-success"><i class="fa fa-arrow-up"> Added</i></div>
+                        <div class="btn btn-success"><i class="fa fa-arrow-up"></i> Added</div>
                     @endif
                 @endif
             </td>

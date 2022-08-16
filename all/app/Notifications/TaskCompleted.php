@@ -11,15 +11,19 @@ class TaskCompleted extends Notification
 {
     use Queueable;
     public $product;
+    public $disableProduct;
+    public $inventory_product;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($product, $disableProduct, $inventory_product)
     {
-        //
+        $this->product = $product;
+        $this->disableProduct = $disableProduct;
+        $this->inventory_product = $inventory_product;
     }
 
     /**
@@ -55,8 +59,21 @@ class TaskCompleted extends Notification
      */
     public function toArray($notifiable)
     {
-        return [
-            'data' => 'Product Added to Inventory'
-        ];
+        if (isset($product)){
+            return [
+                'data' => 'A product Added to Inventory'
+            ];
+        }
+        elseif(isset($disableProduct)){
+            return [
+                'data' => 'A product moved from Disable List'
+            ];
+        }
+        else{
+            return [
+                'data' => 'A product moved Disabled'
+            ];
+        }
+
     }
 }

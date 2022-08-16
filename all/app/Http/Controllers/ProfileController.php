@@ -21,7 +21,7 @@ class ProfileController extends Controller
 
     public function index($id)
     {
-        $data['person'] = Customer::with('customerProfile')->get()->find($id);
+        $data['person'] = Customer::find($id);
         return view('dashboard.profile.manage', $data);
     }
 
@@ -34,10 +34,9 @@ class ProfileController extends Controller
             'occupation' => 'required',
             'income' => 'required',
             'address' => 'required',
-            'images' => 'required',
-            'images.*' => 'image|mimes:jpg,jpeg'
+            'images' => 'required|max:1024',
+            'images.*' => 'image|max:1024'
         ]);
-
         $profile = new Profile();
         $profile->customer_id     = $request->customer_id;
         $profile->gender     = $request->gender;
@@ -58,6 +57,8 @@ class ProfileController extends Controller
 
             }
         }
+
+        // activity log Start
         $logInfo = Profile::findOrFail($profile->id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('Customer Profile Created!', $logInfo);
@@ -65,6 +66,7 @@ class ProfileController extends Controller
         elseif(Auth::guard('merchant')->check()){
             MerchantLogActivity::addToLog('Customer Profile Created!', $logInfo);
         }
+        // activity log end
 
         return redirect('/manage-customer')->with('message', 'Profile Added Successfully');
     }
@@ -98,6 +100,7 @@ class ProfileController extends Controller
             }
         }
 
+         /*activity log Start*/
         $logInfo = Profile::findOrFail($profile->id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('Customer Profile Updated!', $logInfo);
@@ -105,6 +108,7 @@ class ProfileController extends Controller
         elseif(Auth::guard('merchant')->check()){
             MerchantLogActivity::addToLog('Customer Profile Updated!', $logInfo);
         }
+         /*activity log end*/
 
         return redirect()->route('customer.manage')->with('message', 'Profile Updated Successfully');
     }
@@ -117,6 +121,7 @@ class ProfileController extends Controller
             unlink($this->profile->image);
         }
 
+        // activity log Start
         $logInfo = Profile::findOrFail($id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('Customer Profile Deleted!', $logInfo);
@@ -124,6 +129,7 @@ class ProfileController extends Controller
         elseif(Auth::guard('merchant')->check()){
             MerchantLogActivity::addToLog('Customer Profile Deleted!', $logInfo);
         }
+        // activity log end
 
         $this->profile->delete();
 

@@ -22,6 +22,7 @@ class Customer extends Model
         return $this->hasOne(Profile::class, 'customer_id');
     }
 
+
     public function adminLogs()
     {
         return $this->morphMany(AdminLogActivity::class, 'loggable');

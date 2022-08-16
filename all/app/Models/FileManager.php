@@ -13,6 +13,7 @@ use Intervention\Image\Facades\Image;
 class FileManager extends Model
 {
     use HasFactory;
+    protected $appends = ['file_url'];
 
     public function origin(): MorphTo
     {
@@ -41,7 +42,7 @@ class FileManager extends Model
                 //$constraint->aspectRatio();
             });
             $originalImage->stream();
-            Storage::disk(config('app.STORAGE_DRIVER'))->put($thumbnail, $originalImage, 'public');
+            Storage::disk(config('app.storage_driver'))->put($thumbnail, $originalImage, 'public');
             $imgUrl[] = $thumbnail;
 
             return $imgUrl;
@@ -85,12 +86,12 @@ class FileManager extends Model
         }
     }
 
-    public function getUrlAttribute(): ?string
+    public function getFileUrlAttribute(): ?string
     {
         if (config('app.storage_driver') === 's3') {
             return Storage::disk(config('app.storage_driver'))->url($this->attributes['url']);
         }
-        return asset('application/public/storage/' . $this->attributes['url']);
+        return asset('storage/' . $this->attributes['url']);
     }
 
     public function remove()

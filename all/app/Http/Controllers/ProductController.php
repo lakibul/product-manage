@@ -53,10 +53,12 @@ class ProductController extends Controller
             }
         }
 
+        // activity log Start
         $logInfo = Product::findOrFail($product->id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('New Product Created!', $logInfo);
         }
+        // activity log end
 
         return redirect('/manage-product')->with('message', 'Product Added successfully');
     }
@@ -91,10 +93,12 @@ class ProductController extends Controller
             }
         }
 
+        // activity log Start
         $logInfo = Product::findOrFail($product->id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('Product Updated!', $logInfo);
         }
+        // activity log end
 
         return redirect('/manage-product')->with('message', 'Product Updated successfully');
     }
@@ -106,10 +110,12 @@ class ProductController extends Controller
             unlink($this->product->image);
         }
 
+        // activity log Start
         $logInfo = Product::findOrFail($id);
         if (Auth::guard('admin')->check()){
             AdminLogActivity::addToLog('Product deleted!', $logInfo);
         }
+        // activity log end
 
         $this->product->delete();
 
