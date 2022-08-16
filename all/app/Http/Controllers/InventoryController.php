@@ -39,14 +39,15 @@ class InventoryController extends Controller
         ];
         $user = Merchant::find(1);
         Mail::to($user)->send(new NotifyMail($details, $product, null, null));
-        $user->notify(new TaskCompleted($product));
-//        Notification::send($user, new EmailNotification());
+        $user->notify(new TaskCompleted($product, null, null));
 //        end email notification
 
+        // activity log Start
         $logInfo = Product::findOrFail($product->id);
         if (Auth::guard('merchant')->check()) {
             MerchantLogActivity::addToLog('Product Added to Inventory!', $logInfo);
         }
+        // activity log End
 
         return back()->with('message', 'Product Added to Inventory successfully');
     }
@@ -61,10 +62,13 @@ class InventoryController extends Controller
         $inventory->unit = $request->unit;
         $inventory->save();
 
+        // activity log Start
         $logInfo = Inventory::findOrFail($inventory->id);
         if (Auth::guard('merchant')->check()) {
             MerchantLogActivity::addToLog('Product Unit Added!', $logInfo);
         }
+        // activity log end
+
         return redirect()->back()->with('message', 'Product Quantity added successfully');
     }
 }

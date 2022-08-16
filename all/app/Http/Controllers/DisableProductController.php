@@ -38,8 +38,7 @@ class DisableProductController extends Controller
         ];
         $user = Merchant::find(1);
         Mail::to($user)->send(new NotifyMail($details,null, $inventory_product, null));
-//        $user->notify(new TaskCompleted($inventory_product));
-//        Notification::send($user, new EmailNotification());
+        $user->notify(new TaskCompleted(null, null, $inventory_product));
 //        end email notification
 
         $logInfo = Inventory::findOrFail($inventory_product->id);
@@ -67,8 +66,7 @@ class DisableProductController extends Controller
         ];
         $user = Merchant::find(1);
         Mail::to($user)->send(new NotifyMail($details, null, null, $disableProduct));
-        $user->notify(new TaskCompleted);
-//        Notification::send($user, new EmailNotification());
+        $user->notify(new TaskCompleted(null, $disableProduct, null));
 //        end email notification
 
         $logInfo = DisableProduct::findOrFail($disableProduct->id);

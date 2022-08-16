@@ -11,8 +11,5 @@ class FrontController extends Controller
     public function index()
     {
         return view('front.home');
-//        $hasProfile = Profile::Has('customer')->get();
-//        $hasntProfile = Customer::doesntHave('customerProfile')->get();
-//        return $hasProfile;
     }
 }

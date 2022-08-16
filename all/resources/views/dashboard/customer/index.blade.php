@@ -1,12 +1,24 @@
 @extends('master.admin3')
 @section('content')
+    <style>
+        .card-align{
+            margin-bottom: -40px;
+        }
+        .form-align{
+            margin-top: -20px;
+        }
+    </style>
+
     <div class="card card-primary">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h2 class="card-title mb-0">Customers Details</h2>
         </div>
-        <div class="card-body pb-3">
+        <div class="card-body card-align">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-5">
+                    <input type="text" name="search" id="search" placeholder="Search Customer here..." class="form-control">
+                </div>
+                <div class="col-md-3 form-align">
                     <div class="card-body">
                         <form action="{{route('customer.profile')}}" method="post">
                             @csrf
@@ -23,15 +35,15 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-9 text-right">
-                    <a href="{{route('customer.add')}}" class="btn btn-info">Add New Customer</a>
+                <div class="col-md-4 text-right">
+                    <a href="{{route('customer.add')}}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Add New Customer</a>
                 </div>
             </div>
         </div>
+
         <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
-                    <input type="text" name="search" id="search" placeholder="Search here..." class="form-control">
                     <div class="card">
                         <p class="text-center text-success mt-3">{{Session::get('message')}}</p>
                         <div class="table-data">
@@ -61,31 +73,31 @@
                                         <td>
                                             <a href="{{route('customer.edit', ['id' => @$customer->id])}}"
                                                class="btn btn-secondary btn-sm ">
-                                                <i class="fa fa-edit"> Edit</i>
+                                                <i class="fa fa-edit"></i> Edit
                                             </a>
                                             <a href="{{route('customer.delete', ['id' => @$customer->id])}}"
                                                class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"> Remove</i>
+                                                <i class="fa fa-trash"></i> Remove
                                             </a>
                                         </td>
                                         <td>
                                             @if(!isset($customer->customerProfile->id))
                                                 <a href="{{route('profile.add', ['id' => @$customer->id])}}"
                                                    class="btn btn-info btn-sm icon">
-                                                    <i class="fa fa-plus"> Add</i>
+                                                    <i class="fa fa-plus-circle"></i> Add
                                                 </a>
                                             @else
                                                 <a href="" class="btn btn-success btn-sm icon">
-                                                    <i class="fa fa-check-circle"> Added</i>
+                                                    <i class="fa fa-check-circle"></i> Added
                                                 </a>
                                             @endif
                                             @if(!isset($customer->customerProfile->id))
                                                 <a href="" class="btn btn-danger btn-sm icon">
-                                                    <i class="fa fa-ban"> No Profile</i>
+                                                    <i class="fa fa-ban"></i> No Profile
                                                 </a>
                                             @else
                                                 <a href="{{route('profile.manage', ['id' => @$customer->id])}}" class="btn btn-primary btn-sm icon">
-                                                    <i class="fa fa-fill"> Manage</i>
+                                                    <i class="fa fa-tasks"></i> Manage
                                                 </a>
                                             @endif
                                         </td>

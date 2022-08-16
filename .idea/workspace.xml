@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="new admin panel theme installed">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_13_2022_11_24_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_13_2022_11_24_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_14_2022_11_15_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_14_2022_11_15_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_10_05_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_10_05_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_5_59_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_5_59_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_7_23_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_8_2022_7_23_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6a80bf7e-01bf-4969-b872-2d7d0708e561" name="Changes" comment="image view problem fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/all/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/app/Models/FileManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Models/FileManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/DisableProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Http/Controllers/InventoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/app/Notifications/TaskCompleted.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/app/Notifications/TaskCompleted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/check-profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/check-profile/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/customer/pagination_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/customer/pagination_products.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/disabled-product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/disabled-product/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/inventory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/inventory/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/manage.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/product/pagination.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/product/pagination.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/add.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/all/resources/views/dashboard/profile/manage.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -269,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660220563310</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="image view problem fixed">
+      <created>1660638700098</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660638700098</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,6 +296,7 @@
     <MESSAGE value="notification done" />
     <MESSAGE value="junk restored" />
     <MESSAGE value="new admin panel theme installed" />
-    <option name="LAST_COMMIT_MESSAGE" value="new admin panel theme installed" />
+    <MESSAGE value="image view problem fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="image view problem fixed" />
   </component>
 </project>

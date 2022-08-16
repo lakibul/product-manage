@@ -6,8 +6,8 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-md-12 text-right">
-                    <a href="{{route('customer.manage')}}" class="btn btn-info">Go Back to Customer Index</a>
+                <div class="col-md-12 text-right pb-3">
+                    <a href="{{route('customer.manage')}}" class="btn btn-info"><i class="fa fa-arrow-left"></i> Go Back to Customer Index</a>
                 </div>
             </div>
             <div class="row">

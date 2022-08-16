@@ -1,10 +1,17 @@
 @extends('master.admin3')
 @section('content')
     <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center">
-            <h2 class="section-title mb-0">Details</h2>
-            <div class="text-right">
-                <a href="{{route('customer.manage')}}" class="btn btn-info">Go Back to Customer Index</a>
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="section-title mb-0">Details</h2>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-right">
+                        <a href="{{route('customer.manage')}}" class="btn btn-info"><i class="fa fa-arrow-left"></i> Go Back to Customer Index</a>
+                    </div>
+
+                </div>
             </div>
         </div>
         @if(@$hasNotProfile)
